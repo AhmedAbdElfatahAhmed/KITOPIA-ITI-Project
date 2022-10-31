@@ -14,7 +14,7 @@ const NavBar = () => {
     <header>
       <nav className="navbar navbar-expand-lg">
         <div className="container">
-          <Link className="navbar-brand" href="!#">
+          <Link className="navbar-brand" to="/">
             <img src={logo} alt="KITOPIA" />
           </Link>
           <button
@@ -31,32 +31,32 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="#!">
+                <Link className="nav-link active" aria-current="page" to="/">
                   <FaHome />
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="!#">
+                <Link className="nav-link" to="/fun">
                   <FaVideo />
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="!#">
+                <Link className="nav-link" to="/edu">
                   <FaBookReader />
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="!#">
+                <Link className="nav-link" to="/games">
                   <FaGamepad />
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="!#">
+                <Link className="nav-link" to="signup">
                   <SiGnuprivacyguard />
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="!#">
+                <Link className="nav-link" to="/login">
                   <FaSignInAlt />
                 </Link>
               </li>
