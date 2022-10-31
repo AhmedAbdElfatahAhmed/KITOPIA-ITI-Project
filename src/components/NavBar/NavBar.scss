@@ -1,0 +1,32 @@
+header {
+  .navbar {
+    background-color: #ec9600;
+    padding: 0;
+    .navbar-brand {
+      img {
+        width: 150px;
+      }
+    }
+    .navbar-collapse {
+      justify-content: flex-end;
+    }
+    .navbar-nav {
+      width: 45%;
+      justify-content: space-between;
+
+      .nav-item {
+        :hover {
+          background-color: #d12881;
+        }
+        .nav-link {
+          font-size: 1.8rem;
+          color: #fff;
+          padding: 10px 15px;
+        }
+        .nav-link.active {
+          background-color: #d12881;
+        }
+      }
+    }
+  }
+}
