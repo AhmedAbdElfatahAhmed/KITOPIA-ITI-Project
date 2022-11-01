@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg mb-5">
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="KITOPIA" />
