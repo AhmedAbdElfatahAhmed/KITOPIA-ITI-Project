@@ -1,16 +1,12 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { fetch } from '../../../middleware/fetch'
-import './CaVideosList.scss'
-import spoongebob from '../../../assets/images/cartoons/spongebob.png'
+// import { Link } from 'react-router-dom'
+import "./CaVideosList.scss";
+import spoongebob from "../../../assets/images/cartoons/spongebob.png";
 const CaVideosList = () => {
   return (
     <div>
       <main className="site-wrapper">
         <div className="pt-table desktop-768">
-          <div
-            className="pt-tablecell page-home relative"
-          >
+          <div className="pt-tablecell page-home relative">
             <div className="overlay"></div>
 
             <div className="container">
@@ -40,10 +36,9 @@ const CaVideosList = () => {
                       <a className="hex-content">
                         <span className="hex-content-inner">
                           <span className="icon">
-                            <img className='w-100' src={spoongebob} alt="" />
+                            <img className="w-100" src={spoongebob} alt="" />
                             <span className="title">spongebob</span>
                           </span>
-                          
                         </span>
                         <svg
                           viewBox="0 0 173.20508075688772 200"
@@ -259,7 +254,7 @@ const CaVideosList = () => {
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default CaVideosList
+export default CaVideosList;
