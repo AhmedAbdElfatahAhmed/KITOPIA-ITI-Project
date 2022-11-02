@@ -13,7 +13,7 @@ import Profile from "./components/Profile";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import EducationList from "./components/education/EducationList";
-
+import WatchVideo  from "./components/WatchVideo"
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +27,7 @@ function App() {
         <Route path="/fun" element={<FunList />}></Route>
         <Route path="/cartoon" element={<CaVideosList />}></Route>
         <Route path="/music" element={<MuVideosList />}></Route>
+        <Route path="/watch/:id" element={<WatchVideo/>}></Route>
         <Route path="/games" element={<GamesList />}></Route>
         <Route path="/liked" element={<LikedVideos />}></Route>
         <Route path="*" element={<NotFound />}></Route>
