@@ -8,7 +8,7 @@ import {
   FaSignInAlt,
 } from "react-icons/fa";
 import { SiGnuprivacyguard } from "react-icons/si";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <header>
@@ -31,34 +31,34 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <NavLink className="nav-link" to="/" end>
                   <FaHome />
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/fun">
+                <NavLink className="nav-link" to="/fun">
                   <FaVideo />
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/edu">
+                <NavLink className="nav-link" to="/edu">
                   <FaBookReader />
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/games">
+                <NavLink className="nav-link" to="/games">
                   <FaGamepad />
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="signup">
+                <NavLink className="nav-link" to="/signup">
                   <SiGnuprivacyguard />
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
+                <NavLink className="nav-link" to="/login">
                   <FaSignInAlt />
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
