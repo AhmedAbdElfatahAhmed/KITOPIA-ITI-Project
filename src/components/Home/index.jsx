@@ -6,12 +6,26 @@ import parent3 from "../../assets/images/home/parents_feedback/parent-3.png";
 import parent4 from "../../assets/images/home/parents_feedback/parent-4.jpg";
 import parent5 from "../../assets/images/home/parents_feedback/parent-5.jpg";
 import parent6 from "../../assets/images/home/parents_feedback/parent-6.jpg";
+import child from "../../assets/images/home/contact_us/child.png";
+import Form from "react-bootstrap/Form";
+import { useForm } from "react-hook-form";
 import "./Home.scss";
 const Home = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <Fragment>
-      <main>
-        <section className="parents-feedback-section mb-5 mt-5">
+      
+    <main>
+        {/*Start parents feedback section */}
+        <section className="parents-feedback-section mt-5">
           <div className="section-title d-flex justify-content-center text-uppercase  mb-5 position-relative">
             <h2>parents feedback</h2>
             <FaChild className="child-icon position-absolute" />
@@ -231,8 +245,127 @@ const Home = () => {
             </div>
           </div>
         </section>
+        {/*End parents feedback section */}
+
+        {/*Start contact us section */}
+
+        <section className="contact-us-section">
+          <div className="section-title d-flex justify-content-center text-uppercase position-relative  mb-md-0 mb-5">
+            <h2>contact us</h2>
+            <FaChild className="child-icon position-absolute" />
+          </div>
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-md-8">
+                <div className="contact rounded-5 p-5 mb-md-0 mb-4">
+                  <Form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="row">
+                      <div className="offset-md-2 col-md-4 mb-2">
+                        <Form.Group className="mb-3" controlId="formBasicFName">
+                          <Form.Control
+                            {...register("FName", {
+                              required: true,
+                            })}
+                            type="text"
+                            placeholder="Enter First Name"
+                          />
+                          {errors?.FName?.type === "required" && (
+                            <Form.Text className="text-warning fw-bold">
+                              first name is required
+                            </Form.Text>
+                          )}
+                        </Form.Group>
+                      </div>
+                      <div className="col-md-4 mb-2">
+                        <Form.Group className="mb-3" controlId="formBasicLName">
+                          <Form.Control
+                            {...register("LName", {
+                              required: true,
+                            })}
+                            type="text"
+                            placeholder="Enter Last Name"
+                          />
+                          {errors?.FName?.type === "required" && (
+                            <Form.Text className="text-warning fw-bold">
+                              Last name is required
+                            </Form.Text>
+                          )}
+                        </Form.Group>
+                      </div>
+
+                      <div className="offset-md-2 col-md-8 mb-2">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Control
+                            className="py-2"
+                            {...register("email", {
+                              required: true,
+                              pattern:
+                                /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
+                            })}
+                            type="email"
+                            placeholder="Enter Email"
+                          />
+                          {errors?.email?.type === "required" && (
+                            <Form.Text className="text-warning fw-bold">
+                              Email is required
+                            </Form.Text>
+                          )}
+                          {errors?.email?.type === "pattern" && (
+                            <Form.Text className="text-warning fw-bold">
+                              Email is Not Vaild
+                            </Form.Text>
+                          )}
+                        </Form.Group>
+                      </div>
+
+                      <div className="offset-md-2 col-md-8 mb-2">
+                        <Form.Group
+                          className="mb-3"
+                          controlId="formBasiSubject"
+                        >
+                          <Form.Control
+                            className="py-2"
+                            {...register("subject", {
+                              required: true,
+                            })}
+                            type="text"
+                            placeholder="Enter Subject"
+                          />
+                          {errors?.subject?.type === "required" && (
+                            <Form.Text className="text-warning fw-bold">
+                              Subject is required
+                            </Form.Text>
+                          )}
+                        </Form.Group>
+                      </div>
+                    </div>
+
+                    <button
+                      className="submit btn btn-warning text-white d-flex m-auto fs-5 rounded-5"
+                      type="submit"
+                    >
+                      send message
+                    </button>
+                  </Form>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <figure>
+                  <img src={child} alt="child" />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/*End contact us section */}
       </main>
-      <footer></footer>
+
+      <footer className="footer-section">
+        <div className="section-titl bg-danger text-white  text-uppercase  text-center mb-md-0 mb-5">
+          <h2>footer</h2>
+        </div>
+      </footer>
     </Fragment>
   );
 };

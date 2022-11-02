@@ -1,4 +1,24 @@
+// Start Global styling
+.section-title {
+  h2 {
+    background-color: #d12881;
+    color: #fff;
+    font-family: BubblegumSans-Regular;
+    border-radius: 50%;
+    padding: 30px;
+    transform-origin: left center;
+    transform: rotate(3deg);
+  }
+  .child-icon {
+    font-size: 2.5rem;
+    color: #ec9600;
+    top: -15px;
+  }
+}
+// End Global styling
+// Start parents feedback section
 .parents-feedback-section {
+  margin-bottom: 7rem;
   .feedback {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
       rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -71,20 +91,14 @@
       right: 0;
     }
   }
-  .section-title {
-    h2 {
-      background-color: #d12881;
-      color: #fff;
-      font-family: BubblegumSans-Regular;
-      border-radius: 50%;
-      padding: 30px;
-      transform-origin: left center;
-      transform: rotate(3deg);
-    }
-    .child-icon {
-      font-size: 2.5rem;
-      color: #ec9600;
-      top: -15px;
-    }
+}
+// End parents feedback section
+.contact {
+  box-shadow: 0 5px 10px rgba(78, 78, 80, 0.05),
+    0 15px 40px rgba(6, 25, 101, 0.2);
+  background-color: #34327c;
+  color: #fff;
+  button.submit {
+    background-color: #ec9600;
   }
 }
