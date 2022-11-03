@@ -1,5 +1,6 @@
 import React from "react";
 import "./services.scss";
+import { FaStar, FaChild } from "react-icons/fa";
 import service from "../../../assets/images/home/services/services.png";
 import service1 from "../../../assets/images/home/services/service1.jpg";
 import service2 from "../../../assets/images/home/services/service2.jpg";
@@ -10,7 +11,10 @@ function Service() {
   return (
     <section className="services">
       <div className="container">
-        <h2 className="text-center">OUR SERVICES</h2>
+        <div className="section-title d-flex justify-content-center text-uppercase  mb-5 position-relative">
+          <h2>services</h2>
+          <FaChild className="child-icon position-absolute" />
+        </div>
         <div className="services_wrapper row">
           <div className="serve_left col-md-6 col-12">
             <h3>The Best Daycare</h3>
@@ -59,20 +63,20 @@ function Service() {
       </div>
       <div className="serve_botton ">
         <div className="container">
-        <div className="serve_botton_wrapper row ">
-        <div className="serve_botton_left col-md-6 col-12">
-          <h3>Visit Our Daycare</h3>
-          <p>
-            Lotam tempore optio doloremque laboriosam quas, quos eaque molestias
-            odio aut eius animi Suspendisse a elementum anteu imperdiet et
-            maecenas eu eros non nibh aliquet iaculis..
-          </p>
-          <a href="#">Contact us</a>
-        </div>
-        <div className="serve_botton_right col-md-6 col-12">
-          <img src={kids} alt="img" width="100%" />
-        </div>
-        </div>
+          <div className="serve_botton_wrapper row ">
+            <div className="serve_botton_left col-md-6 col-12">
+              <h3>Visit Our Daycare</h3>
+              <p>
+                Lotam tempore optio doloremque laboriosam quas, quos eaque
+                molestias odio aut eius animi Suspendisse a elementum anteu
+                imperdiet et maecenas eu eros non nibh aliquet iaculis..
+              </p>
+              <a href="#">Contact us</a>
+            </div>
+            <div className="serve_botton_right col-md-6 col-12">
+              <img src={kids} alt="img" width="100%" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

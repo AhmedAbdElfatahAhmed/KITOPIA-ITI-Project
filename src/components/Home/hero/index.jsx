@@ -1,15 +1,13 @@
 import Carousel from 'react-bootstrap/Carousel';
 import './hero.scss'
-import img1 from '../../assets/images/home/hero/slide1.jpg'
-import img2 from '../../assets/images/home/hero/slide2.jpg'
-import img3 from '../../assets/images/home/hero/slide1.jpg'
-import img4 from '../../assets/images/home/hero/slide4.jpg'
-import bee from '../../assets/images/home/hero/bee.png'
-import flower from '../../assets/images/home/hero/flower.png'
-import star from '../../assets/images/home/hero/star.png'
-import sun from '../../assets/images/home/hero/sun.png'
-import Service from './service';
-import About from './about us';
+import img1 from '../../../assets/images/home/hero/slide1.jpg'
+import img2 from '../../../assets/images/home/hero/slide2.jpg'
+import img3 from '../../../assets/images/home/hero/slide1.jpg'
+import img4 from '../../../assets/images/home/hero/slide4.jpg'
+import bee from '../../../assets/images/home/hero/bee.png'
+import flower from '../../../assets/images/home/hero/flower.png'
+import star from '../../../assets/images/home/hero/star.png'
+import sun from '../../../assets/images/home/hero/sun.png'
 const Hero = () => {
   return (
     <>
@@ -88,8 +86,6 @@ const Hero = () => {
       </Carousel.Item>
     </Carousel>
     </section>
-    <Service></Service>
-    <About></About>
     </>
   )
 }
