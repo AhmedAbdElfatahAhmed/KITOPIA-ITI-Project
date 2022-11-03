@@ -82,7 +82,7 @@
       background-image: none;
     }
     .carousel-indicators {
-      bottom: -100px;
+      bottom: -60px;
     }
     .carousel-control-next {
       right: 0;
@@ -93,12 +93,33 @@
   }
 }
 // End parents feedback section
-.contact {
-  box-shadow: 0 5px 10px rgba(78, 78, 80, 0.05),
-    0 15px 40px rgba(6, 25, 101, 0.2);
-  background-color: #34327c;
-  color: #fff;
-  button.submit {
-    background-color: #ec9600;
+
+// Start contact us section
+.contact-us-section {
+  .contact {
+    box-shadow: 0 5px 10px rgba(78, 78, 80, 0.05),
+      0 15px 40px rgba(6, 25, 101, 0.2);
+    background-color: #d12881;
+    color: #fff;
+    button.submit {
+      background-color: #ec9600;
+    }
+  }
+  @media (max-width: 767px) {
+    img {
+      display: none;
+    }
   }
 }
+// End contact us section
+
+// Start footer section
+footer {
+  background-color: #34327c;
+  color: #fff;
+  padding: 100px 0 5px;
+  span {
+    color: #d12881;
+  }
+}
+// End footer section

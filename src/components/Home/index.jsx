@@ -22,8 +22,7 @@ const Home = () => {
   };
   return (
     <Fragment>
-      
-    <main>
+      <main>
         {/*Start parents feedback section */}
         <section className="parents-feedback-section mt-5">
           <div className="section-title d-flex justify-content-center text-uppercase  mb-5 position-relative">
@@ -249,8 +248,8 @@ const Home = () => {
 
         {/*Start contact us section */}
 
-        <section className="contact-us-section">
-          <div className="section-title d-flex justify-content-center text-uppercase position-relative  mb-md-0 mb-5">
+        <section className="contact-us-section mb-5">
+          <div className="section-title d-flex justify-content-center text-uppercase position-relative mb-5">
             <h2>contact us</h2>
             <FaChild className="child-icon position-absolute" />
           </div>
@@ -338,6 +337,27 @@ const Home = () => {
                           )}
                         </Form.Group>
                       </div>
+
+                      <div className="offset-md-2 col-md-8 mb-2">
+                        <Form.Group
+                          className="mb-3"
+                          controlId="messageForm.ControlTextarea1"
+                        >
+                          <Form.Control
+                            as="textarea"
+                            rows={3}
+                            placeholder="Enter your message"
+                            {...register("message", {
+                              required: true,
+                            })}
+                          />
+                          {errors?.message?.type === "required" && (
+                            <Form.Text className="text-warning fw-bold">
+                              message is required
+                            </Form.Text>
+                          )}
+                        </Form.Group>
+                      </div>
                     </div>
 
                     <button
@@ -351,7 +371,7 @@ const Home = () => {
               </div>
               <div className="col-md-4">
                 <figure>
-                  <img src={child} alt="child" />
+                  <img className="w-100" src={child} alt="child" />
                 </figure>
               </div>
             </div>
@@ -361,11 +381,13 @@ const Home = () => {
         {/*End contact us section */}
       </main>
 
-      <footer className="footer-section">
-        <div className="section-titl bg-danger text-white  text-uppercase  text-center mb-md-0 mb-5">
-          <h2>footer</h2>
-        </div>
+      {/*Start footer section */}
+      <footer>
+        <p className="text-center fs-5">
+          Copyright &copy; 2022 <span>KITOPIA</span>
+        </p>
       </footer>
+      {/*End footer section */}
     </Fragment>
   );
 };
