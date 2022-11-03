@@ -13,7 +13,8 @@ import Profile from "./components/Profile";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import EducationList from "./components/education/EducationList";
-import WatchVideo  from "./components/WatchVideo"
+import WatchVideo  from "./components/WatchVideo";
+import Footer from "./components/Footer";
 function App() {
   return (
     <BrowserRouter>
@@ -32,6 +33,7 @@ function App() {
         <Route path="/liked" element={<LikedVideos />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

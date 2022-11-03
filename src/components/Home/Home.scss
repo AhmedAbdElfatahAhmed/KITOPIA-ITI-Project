@@ -1,0 +1,18 @@
+// Start Global styling
+.section-title {
+  h2 {
+    background-color: #d12881;
+    color: #fff;
+    font-family: BubblegumSans-Regular;
+    border-radius: 50%;
+    padding: 30px;
+    transform-origin: left center;
+    transform: rotate(3deg);
+  }
+  .child-icon {
+    font-size: 2.5rem;
+    color: #ec9600;
+    top: -15px;
+  }
+}
+// End Global styling
