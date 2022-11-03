@@ -1,7 +1,7 @@
 export const cartoons = [
   {
     id: "1",
-    name: "spongebob",
+    name: "spongebob-english",
     pic: "../assets/images/cartoons/spongbob.png",
   },
 
