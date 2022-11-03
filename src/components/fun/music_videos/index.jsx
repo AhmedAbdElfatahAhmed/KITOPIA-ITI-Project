@@ -36,16 +36,7 @@ const MuVideosList = () => {
               </div>
             </div>
           </div>
-          // <div  className="col-xl-4 shadow-lg " key={video.videoId}>
-          //   <div className="card ">
-          //     <img src={video.thumbnail[0].url} className="card-img-top" alt="..." />
-          //     <div className="card-body ">
-          //       <p className="card-text">
-          //        {video.description}
-          //       </p>
-          //     </div>
-          //   </div>
-          // </div>
+          
         );
       })}
     </div>

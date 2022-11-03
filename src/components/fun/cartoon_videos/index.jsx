@@ -15,7 +15,7 @@ const CaVideosList = () => {
                 <div className="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8 row g-5">
                   {cartoons.map((cartoon) => {
                     return (
-                      <Link to={'../music'} className="col-3">
+                      <Link to={`../cartoon/page/${cartoon.name}`} className="col-3">
                       <div className="hexagon-menu clear ">
                         <div className="hexagon-item">
                           <div className="hex-item">

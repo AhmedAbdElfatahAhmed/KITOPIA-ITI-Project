@@ -29,7 +29,7 @@ function App() {
         <Route path="/cartoon" element={<CaVideosList />}></Route>
         <Route path="/music" element={<MuVideosList />}></Route>
         <Route path="/watch/:id" element={<WatchVideo/>}></Route>
-        <Route path="/cartoon/:name" element={<CartoonPage/>}></Route>
+        <Route path="/cartoon/page/:name" element={<CartoonPage/>}></Route>
         <Route path="/games" element={<GamesList />}></Route>
         <Route path="/liked" element={<LikedVideos />}></Route>
         <Route path="*" element={<NotFound />}></Route>
