@@ -1,15 +1,16 @@
-/*# sourceMappingURL=SignUp.css.map */
-.login {
-  background-color: #d12881;
-}
+Form {
+  .login {
+    background-color: #d12881;
+  }
 
-.log {
-  background-color: #d12881;
-  border: 0;
-  transition: all .5s;
-}
+  .log {
+    background-color: #d12881;
+    border: 0;
+    transition: all .5s;
 
-.log:hover {
-  transform: scale(1.2);
-  background-color: #d12881;
+    &:hover {
+      transform: scale(1.2);
+      background-color: #d12881;
+    }
+  }
 }
