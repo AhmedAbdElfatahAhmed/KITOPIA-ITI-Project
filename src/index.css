@@ -25,3 +25,13 @@ code {
   font-family: "Flavors-Regular";
   src: url("./assets/fonts/Flavors/Flavors-Regular.ttf");
 }
+
+.carousel-indicators [data-bs-target] {
+  
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  background-color: #d12881;
+  border-radius: 50%;
+  
+}
