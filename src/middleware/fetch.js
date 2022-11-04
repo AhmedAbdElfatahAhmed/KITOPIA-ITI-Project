@@ -4,7 +4,7 @@ const baseURL =`https://youtube-v3-alternative.p.rapidapi.com/search`
   const options = {
    
     url: baseURL ,
-    params: { geo: 'US', lang: 'en'  , type: 'video'},
+    params: { geo: 'US', lang: 'en'  , type: 'video' , sort_by: 'relevance'},
     headers: {
       'X-RapidAPI-Key': '389d894c91mshf4b4f7def540ae3p1bcc78jsn2079f211ec2d',
       'X-RapidAPI-Host': 'youtube-v3-alternative.p.rapidapi.com'

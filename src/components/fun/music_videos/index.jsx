@@ -18,7 +18,7 @@ const MuVideosList = () => {
       {videos.map((video) => {
         return (
           <div className="col-xl-4" key={video.videoId}>
-            <div className="card">
+            <div className="my-card">
               <div className="image w-100">
                 <Link to={`/watch/${video.videoId}`}>
                   {" "}
@@ -36,16 +36,7 @@ const MuVideosList = () => {
               </div>
             </div>
           </div>
-          // <div  className="col-xl-4 shadow-lg " key={video.videoId}>
-          //   <div className="card ">
-          //     <img src={video.thumbnail[0].url} className="card-img-top" alt="..." />
-          //     <div className="card-body ">
-          //       <p className="card-text">
-          //        {video.description}
-          //       </p>
-          //     </div>
-          //   </div>
-          // </div>
+          
         );
       })}
     </div>

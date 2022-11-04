@@ -22,7 +22,9 @@ const FunList = () => {
             <div className="col-md-6 col-sm-12">
               <div className="fun">
                 <div className="fun-icon mb-4">
-                  <img src={television} className="tv" alt="Cartoon" />
+                  <Link to="/cartoon">
+                    <img src={television} className="tv" alt="Cartoon" />
+                    </Link>
                 </div>
                 <div className="fun-category">Cartoon Videos</div>
               </div>
