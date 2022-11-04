@@ -1,48 +1,14 @@
-@mixin breakPoints($media) {
-  @if $media == mobile {
-    @media (max-width: 576px) {
-      @content;
-    }
-  }
-  // applies to x-small devices (portrait phones, less than 576px)
-  @if $media == tablet {
-    @media (max-width: 575.98px) {
-      @content;
-    }
-  }
-  // applies to small devices (landscape phones, less than 768px)
-  @if $media == mediumScreen {
-    @media (max-width: 767.98px) {
-      @content;
-    }
-  }
-  // applies to medium devices (tablets, less than 992px)
-  @if $media == desktop {
-    @media (max-width: 991.98px) {
-      @content;
-    }
-  }
-  // applies to large devices (desktops, less than 1200px)
-  @if $media == xldesktop {
-    @media (max-width: 1199.98px) {
-      @content;
-    }
-  }
-  // applies to x-large devices (large desktops, less than 1400px)
-  @if $media == xxldesktop {
-    @media (max-width: 1399.98px) {
-      @content;
-    }
-  }
-}
+// SCSS Files
+@import "../../../assets/styles/base/mixin";
+@import "../../../assets/styles/base/variables";
 
 .education-wrapper {
   .edu-heading {
     font-size: 5rem;
     font-family: "Flavors-Regular";
     text-align: center;
-    color: #fff;
-    background-color: #34327c;
+    color: $white;
+    background-color: $sec-dark;
     width: fit-content;
     margin: auto;
     padding: 30px;
@@ -63,7 +29,7 @@
       }
       .edu-category {
         font-size: 2.5rem;
-        color: #34327c;
+        color: $sec-dark;
       }
     }
   }
@@ -80,7 +46,7 @@
       bottom: -100px;
       width: 40px;
       height: 40px;
-      color: #34327c;
+      color: $sec-dark;
       border-radius: 50%;
       opacity: 0.5;
       animation: bubblesEdu 4s infinite ease-in;
@@ -170,7 +136,7 @@
 
 @keyframes bubblesEdu {
   0% {
-    bottom: -100%;
+    bottom: -50%;
     transform: translateX(0);
   }
   50% {
