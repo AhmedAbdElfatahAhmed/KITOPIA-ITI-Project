@@ -20,7 +20,7 @@ return(
     {videos.map((video) => {
       return (
         <div className="col-xl-4" key={video.videoId}>
-          <div className="card">
+          <div className="my-card">
             <div className="image w-100">
               <Link to={`/watch/${video.videoId}`}>
                 {" "}
@@ -33,7 +33,7 @@ return(
             </div>
 
             <div className="content">
-              <h4 className="card-text">{video.title}</h4>
+              <h4 className="my-card-text">{video.title}</h4>
               <p>{video.description}</p>
             </div>
           </div>
