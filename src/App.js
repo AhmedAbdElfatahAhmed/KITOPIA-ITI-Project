@@ -13,7 +13,7 @@ import Profile from "./components/Profile";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import EducationList from "./components/education/EducationList";
-import WatchVideo  from "./components/WatchVideo"
+import WatchVideo  from "./components/WatchVideo";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 function App() {
   return (
