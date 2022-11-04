@@ -14,6 +14,7 @@ import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import EducationList from "./components/education/EducationList";
 import WatchVideo  from "./components/WatchVideo";
+import Footer from "./components/Footer";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 function App() {
   return (
