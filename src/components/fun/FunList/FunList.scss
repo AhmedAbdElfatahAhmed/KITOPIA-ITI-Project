@@ -1,3 +1,7 @@
+// SCSS Files
+@import "../../../assets/styles/base/mixin";
+@import "../../../assets/styles/base/variables";
+
 .fun-wrapper {
   background-image: url(../../../assets/images/fun/tom&gery.jpg);
   background-position: center center;
@@ -7,8 +11,8 @@
     font-size: 5rem;
     font-family: "Flavors-Regular";
     text-align: center;
-    color: #fff;
-    background-color: #34327c;
+    color: $white;
+    background-color: $sec-dark;
     width: fit-content;
     margin: auto;
     padding: 30px;
@@ -34,8 +38,17 @@
       }
       .fun-category {
         font-size: 2.5rem;
-        color: #34327c;
+        color: $sec-dark;
       }
+    }
+  }
+}
+
+// Media Query
+@include breakPoints(desktop) {
+  .fun-wrapper {
+    .fun-heading {
+      font-size: 3rem;
     }
   }
 }
