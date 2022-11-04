@@ -1,0 +1,18 @@
+footer {
+  background-image: url("../../assets/images/footer/footerstrap.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #34327c;
+  color: #fff;
+  padding: 130px 0;
+  p {
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    span {
+      color: #d12881;
+    }
+  }
+}
