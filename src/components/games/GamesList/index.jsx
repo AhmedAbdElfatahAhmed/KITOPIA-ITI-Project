@@ -6,7 +6,7 @@ import memory from "../../../assets/images/games/memory.png";
 const GamesList = () => {
   return (
     <section className="game-wrapper pt-5">
-      <h1 className="heading mb-5">Games</h1>
+      <h1 className="game-heading mb-5">Games</h1>
       <div className="game-list">
         <div className="container">
           <div className="row">

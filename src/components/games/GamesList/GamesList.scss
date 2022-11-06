@@ -1,10 +1,14 @@
+// SCSS Files
+@import "../../../assets/styles/base/mixin";
+@import "../../../assets/styles/base/variables";
+
 .game-wrapper {
-  .heading {
+  .game-heading {
     font-size: 5rem;
     font-family: "Flavors-Regular";
     text-align: center;
-    color: #fff;
-    background-color: #34327c;
+    color: $white;
+    background-color: $sec-dark;
     width: fit-content;
     margin: auto;
     padding: 30px;
@@ -33,7 +37,7 @@
       }
       .game-name {
         font-size: 2.5rem;
-        color: #34327c;
+        color: $sec-dark;
       }
     }
     .bubbles {
@@ -42,7 +46,7 @@
         bottom: -100px;
         width: 40px;
         height: 40px;
-        background: #34327c;
+        background: $sec-dark;
         border-radius: 50%;
         opacity: 0.5;
         animation: bubblesGames 5s infinite ease-in;
@@ -115,6 +119,18 @@
         left: 25%;
         animation-duration: 10s;
         animation-delay: 4s;
+      }
+    }
+  }
+}
+
+// Media Query
+@include breakPoints(desktop) {
+  .game-wrapper {
+    .game-heading {
+      font-size: 3rem;
+      &::after {
+        top: 0;
       }
     }
   }
