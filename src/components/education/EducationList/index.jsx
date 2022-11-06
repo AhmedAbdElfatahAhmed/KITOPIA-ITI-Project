@@ -37,7 +37,7 @@ const EducationList = () => {
             </div>
           </div>
         </div>
-        <div class="pens">
+        <div className="pens">
           <GiOpenBook className="pen" />
           <GiOpenBook className="pen" />
           <GiOpenBook className="pen" />
