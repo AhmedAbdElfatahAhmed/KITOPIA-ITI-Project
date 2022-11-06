@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react";
+import { fetch } from "../../../../../../middleware/fetch";
 import { Link } from "react-router-dom";
-import { fetch } from "../../../../middleware/fetch";
 import { useParams } from "react-router-dom";
-import "./cartoonPage.scss";
-const CartoonPage = () => {
+const SubjectVideos = () => {
   const params = useParams();
-  let catg = params.name;
-  console.log(catg);
+  let subjName = params.subjectName;
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     getVideos();
   }, []);
-  const getVideos = () => {
-    fetch(catg).then((data) => setVideos(data.data));
-  };
 
+  const getVideos = () => {
+    fetch(subjName).then((data) => setVideos(data.data));
+  };
+  console.log("videosss", videos);
   return (
     <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
       {videos.map((video) => {
@@ -44,4 +43,4 @@ const CartoonPage = () => {
   );
 };
 
-export default CartoonPage;
+export default SubjectVideos;

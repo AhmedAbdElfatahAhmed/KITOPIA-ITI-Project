@@ -1,5 +1,9 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// export const store = configureStore({
-//   // reducers
-
-// });
+import { configureStore } from "@reduxjs/toolkit";
+import youngerSubjects  from "./youngerSubjectsSlice";
+// console.log("slice", youngerSubjects);
+export const store = configureStore({
+  // reducers
+  reducer: {
+    youngerSubjects
+  },
+});
