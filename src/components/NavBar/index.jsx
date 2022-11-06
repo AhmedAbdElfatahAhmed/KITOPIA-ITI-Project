@@ -1,15 +1,33 @@
 import "./NavBar.scss";
 import logo from "../../assets/images/navbar/logo-png.png";
+import axios from "axios";
 import {
   FaHome,
   FaVideo,
   FaBookReader,
   FaGamepad,
   FaSignInAlt,
+  FaHeart,
 } from "react-icons/fa";
 import { SiGnuprivacyguard } from "react-icons/si";
 import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 const NavBar = () => {
+  // set count liked videos from db file
+  const [countLiked, setCountLiked] = useState(0);
+  useEffect(() => {
+    // get Liked length
+    axios
+      .get(`http://localhost:8000/likedVideos`)
+      .then((res) => {
+        setCountLiked(res.data.length);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [countLiked]);
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg">
@@ -48,6 +66,17 @@ const NavBar = () => {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/games">
                   <FaGamepad />
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                {/* check countLiked > 0 */}
+                {countLiked > 0 ? (
+                  <p className="count_liked_videos">{countLiked}</p>
+                ) : (
+                  <p className="count_liked_videos"></p>
+                )}
+                <NavLink className="nav-link" to="/liked">
+                  <FaHeart />
                 </NavLink>
               </li>
               <li className="nav-item">
