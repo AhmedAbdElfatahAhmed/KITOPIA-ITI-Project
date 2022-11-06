@@ -14,9 +14,11 @@ import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import EducationList from "./components/education/EducationList";
 import WatchVideo  from "./components/WatchVideo"
+import { AuthContextProvider } from "./components/Contexts/Authcontext";
 function App() {
   return (
-    <BrowserRouter>
+    <AuthContextProvider>
+<BrowserRouter>
       <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
@@ -33,6 +35,8 @@ function App() {
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
+    </AuthContextProvider>
+    
   );
 }
 
