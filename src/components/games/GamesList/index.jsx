@@ -3,6 +3,7 @@ import ludo from "../../../assets/images/games/ludo.png";
 import snake from "../../../assets/images/games/snake.png";
 import sonic from "../../../assets/images/games/sonic.png";
 import memory from "../../../assets/images/games/memory.png";
+import { Link } from "react-router-dom";
 const GamesList = () => {
   return (
     <section className="game-wrapper pt-5">
@@ -37,7 +38,9 @@ const GamesList = () => {
             <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
               <div className="game">
                 <div className="game-icon mb-4">
-                  <img src={memory} alt="" />
+                  <Link to="/cardgame">
+                    <img src={memory} alt="" />
+                  </Link>
                 </div>
                 <div className="game-name">Memory Game</div>
               </div>
@@ -92,22 +95,22 @@ const GamesList = () => {
             </div>
           </div>
         </div>
-        <div class="bubbles">
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
-          <span class="bubble"></span>
+        <div className="bubbles">
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
+          <span className="bubble"></span>
         </div>
       </div>
     </section>

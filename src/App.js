@@ -13,6 +13,8 @@ import Profile from "./components/Profile";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import EducationList from "./components/education/EducationList";
+import CardGame from "./components/games/CardGame";
+import Question from "./components/education/Questions";
 import { AuthContextProvider } from "./components/Contexts/Authcontext";
 import EducationLevels from "./components/education/EducationVideos/Levels";
 import LevelPage from "./components/education/EducationVideos/LevelPage";
@@ -21,6 +23,7 @@ import WatchVideo from "./components/WatchVideo";
 import Footer from "./components/Footer";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 import  CommentSection  from "./components/commentSection";
+
 function App() {
   return (
     <AuthContextProvider>
@@ -32,6 +35,7 @@ function App() {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/edu" element={<EducationList />}></Route>
+        <Route path="/question" element={<Question />}></Route>
         <Route path="/edu/levels" element={<EducationLevels />}></Route>
         <Route path="/edu/levels/:levelName" element={<LevelPage />}></Route>
         <Route
@@ -44,6 +48,7 @@ function App() {
         <Route path="/watch/:id" element={<WatchVideo />}></Route>
         <Route path="/cartoon/page/:name" element={<CartoonPage />}></Route>
         <Route path="/games" element={<GamesList />}></Route>
+        <Route path="/cardgame" element={<CardGame />}></Route>
         <Route path="/liked" element={<LikedVideos />}></Route>
         <Route path="/comment" element={<CommentSection />}></Route>
         <Route path="*" element={<NotFound />}></Route>
