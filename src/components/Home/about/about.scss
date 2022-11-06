@@ -1,0 +1,49 @@
+.aboutUs {
+  margin-bottom: 5rem;
+  .aboutUs_wrapper {
+    .about_top {
+      .carousel-control-next-icon,
+      .carousel-control-next-icon {
+        display: none;
+      }
+      .carousel-control-prev-icon,
+      .carousel-control-prev-icon {
+        display: none;
+      }
+
+      margin-bottom: 5rem;
+      .about_left {
+        .Carousel_outline {
+          border: solid 7px #34327c;
+          border-radius: 50%;
+          overflow: hidden;
+          background-color: #d12882a6;
+        }
+        img {
+          height: 350px;
+          width: 100px;
+          border-radius: 50%;
+        }
+      }
+      .about_right {
+        h3 {
+          font-family: BubblegumSans-Regular;
+          color: #333;
+          font-weight: 800;
+          font-size: 43px;
+          margin-top: 0px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .about_cards_wrapper {
+      margin-bottom: 5rem;
+      .about_card {
+        text-align: center;
+        h4 {
+          font-family: BubblegumSans-Regular;
+        }
+      }
+    }
+  }
+}

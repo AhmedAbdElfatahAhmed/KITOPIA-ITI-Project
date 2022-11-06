@@ -1,6 +1,10 @@
+// Media Queiries
+@import "../../assets/styles/base/mixin";
+@import "../../assets/styles/base/variables";
+
 header {
   .navbar {
-    background-color: #ec9600;
+    background-color: $primary;
     padding: 0;
     .navbar-brand {
       img {
@@ -8,23 +12,46 @@ header {
       }
     }
     .navbar-collapse {
-      justify-content: flex-end;
+      justify-content: end;
+      .navbar-nav {
+        .nav-item {
+          :hover {
+            background-color: $sec-dark;
+          }
+          .nav-link {
+            font-size: 1.8rem;
+            color: $white;
+            padding: 10px 20px;
+            margin: 0 1px;
+          }
+          .active {
+            background-color: $sec-dark;
+          }
+        }
+      }
     }
-    .navbar-nav {
-      width: 45%;
-      justify-content: space-between;
-
-      .nav-item {
-        :hover {
-          background-color: #d12881;
+  }
+}
+// Media Query
+@include breakPoints(desktop) {
+  header {
+    .navbar {
+      .navbar-toggler {
+        &:focus {
+          box-shadow: none;
         }
-        .nav-link {
-          font-size: 1.8rem;
-          color: #fff;
-          padding: 10px 15px;
-        }
-        .nav-link.active {
-          background-color: #d12881;
+      }
+      .navbar-collapse {
+        flex-grow: unset;
+        .navbar-nav {
+          flex-direction: row;
+          justify-content: center;
+          padding-top: 20px;
+          .nav-item {
+            .nav-link {
+              font-size: 1.4rem;
+            }
+          }
         }
       }
     }
