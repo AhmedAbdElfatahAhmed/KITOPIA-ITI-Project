@@ -13,6 +13,7 @@ import Profile from "./components/Profile";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import EducationList from "./components/education/EducationList";
+import { AuthContextProvider } from "./components/Contexts/Authcontext";
 import EducationLevels from "./components/education/EducationVideos/Levels";
 import LevelPage from "./components/education/EducationVideos/LevelPage";
 import YounSubjectVideos from "./components/education/EducationVideos/Levels/Younger/YounSubjectVideos";
@@ -21,7 +22,8 @@ import Footer from "./components/Footer";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 function App() {
   return (
-    <BrowserRouter>
+    <AuthContextProvider>
+<BrowserRouter>
       <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
@@ -46,6 +48,8 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </AuthContextProvider>
+    
   );
 }
 
