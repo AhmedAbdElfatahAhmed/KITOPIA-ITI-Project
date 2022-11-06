@@ -15,6 +15,14 @@ header {
       justify-content: end;
       .navbar-nav {
         .nav-item {
+          position: relative;
+          .count_liked_videos{
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            color: red;
+            
+          }
           :hover {
             background-color: $sec-dark;
           }
