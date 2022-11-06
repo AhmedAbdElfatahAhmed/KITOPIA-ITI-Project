@@ -16,6 +16,7 @@ import EducationList from "./components/education/EducationList";
 import WatchVideo  from "./components/WatchVideo";
 import Footer from "./components/Footer";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
+import  CommentSection  from "./components/commentSection";
 function App() {
   return (
     <BrowserRouter>
@@ -33,6 +34,7 @@ function App() {
         <Route path="/cartoon/page/:name" element={<CartoonPage/>}></Route>
         <Route path="/games" element={<GamesList />}></Route>
         <Route path="/liked" element={<LikedVideos />}></Route>
+        <Route path="/comment" element={<CommentSection />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer/>
