@@ -19,7 +19,7 @@ const NavBar = () => {
   useEffect(() => {
     // get Liked length
     axios
-      .get(`http://localhost:8000/likedVideos`)
+      .get(`http://localhost:3005/likedVideos`)
       .then((res) => {
         setCountLiked(res.data.length);
       })

@@ -8,7 +8,7 @@ const LikedVideos = () => {
   const [likedVideos,setLikedVideos]= useState([])
   useEffect(() => {
     // get Liked length
-    axios.get(`http://localhost:8000/likedVideos`).then((res)=>{
+    axios.get(`http://localhost:3005/likedVideos`).then((res)=>{
       setLikedVideos(res.data)
       // console.log(res)
       }).catch((err)=>{

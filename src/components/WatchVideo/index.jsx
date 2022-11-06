@@ -25,7 +25,7 @@ const WatchVideo = () => {
   useEffect(() => {
     // get (liked or not) video from json db file
     axios
-      .get(`http://localhost:8000/likedVideos/${params.id}`)
+      .get(`http://localhost:3005/likedVideos/${params.id}`)
       .then((res) => {
         // set liked status in db file = videoLiked
         seTvideoLiked(true);
@@ -50,7 +50,7 @@ const WatchVideo = () => {
       seTvideoLiked(true);
       // post liked video in json db file
       axios
-        .post("http://localhost:8000/likedVideos", liked)
+        .post("http://localhost:3005/likedVideos", liked)
         .then((res) => {
           console.log(res);
         })
@@ -61,7 +61,7 @@ const WatchVideo = () => {
       seTvideoLiked(false);
       // delete video from json db file
       axios
-        .delete(`http://localhost:8000/likedVideos/${liked.id}`)
+        .delete(`http://localhost:3005/likedVideos/${liked.id}`)
         .then((res) => {
           console.log(res);
         })
