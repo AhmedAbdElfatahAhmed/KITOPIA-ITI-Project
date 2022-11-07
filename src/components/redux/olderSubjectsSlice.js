@@ -4,7 +4,7 @@ export const getSubjects = createAsyncThunk(
   "book/getBooks",
   async (_, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:3005/younger");
+      const response = await fetch("http://localhost:3005/older");
       const data = await response.json();
       return data;
     } catch (err) {
@@ -14,9 +14,9 @@ export const getSubjects = createAsyncThunk(
 );
 
 // reducer
-export const youngerSubjectsSlice = createSlice({
-  name: "youngerSubjects",
-  initialState: { youngerSubjects: [] },
+export const olderSubjectsSlice = createSlice({
+  name: "olderSubjects",
+  initialState: { olderSubjects: [] },
   reducers: {},
   extraReducers: {
     [getSubjects.pending]: (state, action) => {
@@ -24,7 +24,7 @@ export const youngerSubjectsSlice = createSlice({
     },
     [getSubjects.fulfilled]: (state, action) => {
       // console.log(action);
-      state.youngerSubjects = action.payload;
+      state.olderSubjects = action.payload;
     },
     [getSubjects.rejected]: (state, action) => {
       // console.log(action);
@@ -32,4 +32,4 @@ export const youngerSubjectsSlice = createSlice({
   },
 });
 
-export default youngerSubjectsSlice.reducer;
+export default olderSubjectsSlice.reducer;
