@@ -33,7 +33,9 @@ const EducationList = () => {
             <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="edu">
                 <div className="edu-icon mb-4">
-                  <img src={ask} alt="" />
+                  <Link to={"/question"}>
+                    <img src={ask} alt="" />
+                  </Link>
                 </div>
                 <div className="edu-category">Questions?</div>
               </div>
