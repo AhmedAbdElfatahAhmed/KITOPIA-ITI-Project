@@ -11,30 +11,32 @@ import { UserAuth } from "../../Contexts/Authcontext";
 
 
 
-
-
 function Login() {
   const {  formState: { errors } } = useForm();
   const [email, setEmail] = useState('')
+  
   const [password, setPassword] = useState('')
   const [error, setErroer] = useState('')
   const navigate = useNavigate()
   const { signIn } = UserAuth()
+
 
   const handlesubmit = async (e) => {
     e.preventDefault();
     setErroer('')
     try {
       await signIn(email, password)
-      navigate('/account')
+      navigate('/account');
       
     } catch (e) {
       setErroer(e.message)
       console.log(e.message)
       alert("invalid email or password")
     }
+    
   }
 
+  
 
   const onSubmit = data => console.log(data);
   return (
@@ -91,10 +93,10 @@ function Login() {
 
             </div>
             <div className="submit text-center ">
-              <Button className="mt-5 log px-5" type="submit">
+              <Button  className="mt-2 log px-5" type="submit">
                 Login
               </Button>
-              <p className="mt-4">Dont have an account? <span> <Link className='text-decoration-none'
+              <p className=" ">Dont have an account? <span> <Link className='text-decoration-none'
                 to="/signup">SignUp</Link></span></p>
             </div>
 
