@@ -14,6 +14,8 @@ import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import Account from "./components/Account";
 import EducationList from "./components/education/EducationList";
+import CardGame from "./components/games/CardGame";
+import Question from "./components/education/Questions";
 import { AuthContextProvider } from "./components/Contexts/Authcontext";
 import EducationLevels from "./components/education/EducationVideos/Levels";
 import LevelPage from "./components/education/EducationVideos/LevelPage";
@@ -22,11 +24,7 @@ import WatchVideo from "./components/WatchVideo";
 import Footer from "./components/Footer";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 import { db } from "./components/firebase";
-
-
- 
-
-  
+import  CommentSection  from "./components/commentSection";
 function App() {
   let currentUserr ,children;
 const RequireAuth=({children})=>{
@@ -43,8 +41,8 @@ const RequireAuth=({children})=>{
         <Route path="/signup" element={<SignUp db={db}/>}></Route>
         <Route path="/account" element={<Account/>}></Route>
         <Route path="/profile" element={<Profile />}></Route>
-        
         <Route path="/edu" element={<RequireAuth><EducationList /></RequireAuth> }></Route>
+        <Route path="/question" element={<Question />}></Route>
         <Route path="/edu/levels" element={<EducationLevels />}></Route>
         <Route path="/edu/levels/:levelName" element={<LevelPage />}></Route>
         <Route
@@ -57,7 +55,9 @@ const RequireAuth=({children})=>{
         <Route path="/watch/:id" element={<WatchVideo />}></Route>
         <Route path="/cartoon/page/:name" element={<CartoonPage />}></Route>
         <Route path="/games" element={<GamesList />}></Route>
+        <Route path="/cardgame" element={<CardGame />}></Route>
         <Route path="/liked" element={<LikedVideos />}></Route>
+        <Route path="/comment" element={<CommentSection />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
