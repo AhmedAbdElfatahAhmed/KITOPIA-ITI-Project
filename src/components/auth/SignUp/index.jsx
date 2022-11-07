@@ -9,9 +9,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { UserAuth } from "../../Contexts/Authcontext";
 import React from "react";
+import { addDoc, collection } from "firebase/firestore/lite";
 
 
-function SignUp() {
+
+function SignUp(props) {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [email, setEmail] = useState('')
@@ -33,6 +35,37 @@ function SignUp() {
       alert("try again")
     }
   }
+
+  const [profile, setprofile] = useState({
+    parentName: "",
+    parentDate: "",
+    childName: "",
+    childAge: "",
+
+  });
+
+  // Saving Data
+  function handlechange(e) {
+    profile[e.target.id] = e.target.value;
+    setprofile({ ...profile, profile })
+  }
+
+  const savechanges = async () => {
+    await addDoc(collection(props.db, "user-response-saving"), {
+      parentName: profile.parentName,
+      parentDate: profile.parentDate,
+      childName: profile.childName,
+      childAge: profile.childAge,
+    }).then(function (res) {
+
+
+    }).catch(function (err) {
+      setErroer(e.message)
+
+
+    })
+  };
+
 
   //   const [details, setDetails] = useState({
 //     pname: '',
@@ -100,7 +133,7 @@ function SignUp() {
                     <Form.Group className="mb-3 inp" controlId="formBasicName">
 
                       <Form.Control
-                        type="text" className="" placeholder="Parent Name "
+                        type="text" id="parentName" className="" placeholder="Parent Name " onChange={handlechange}
                         // onChange={(e)=> setDetails({...details,pname:e.target.value})}
 
                         {...register('fname',
@@ -144,19 +177,10 @@ function SignUp() {
 
                       <Form.Control
 
-                        type="date" placeholder="date"
-                        {...register('date',
-                          {
-                            required: true
-                          }
-                        )}
+                        type="date" id="parentDate" placeholder="date" onChange={handlechange}
+                       
                       />
-                      {console.log(errors)}
-                      {
-                        errors?.email?.type === "required"
-                        &&
-                        <p className="text-danger">Date of birth is required</p>
-                      }
+                     
 
                     </Form.Group>
 
@@ -173,21 +197,12 @@ function SignUp() {
                     <Form.Group className="mb-3" controlId="formBasicName">
 
                       <Form.Control
-                        type="text" className="inp" placeholder="Child Name "
+                        type="text" id="childName" className="inp" placeholder="Child Name " onChange={handlechange}
                         // onChange={(e)=> setDetails({...details,cname:e.target.value})}
 
-                        {...register('Chname',
-                          {
-                            required: true
-                          }
-                        )}
+                       
                       />
-                      {console.log(errors)}
-                      {
-                        errors?.email?.type === "required"
-                        &&
-                        <p className="text-danger"> child name is required</p>
-                      }
+                     
 
                     </Form.Group>
 
@@ -198,22 +213,12 @@ function SignUp() {
 
                       <Form.Control
 
-                        type="number" className="inp" placeholder="Child Age"
+                        type="number" id="childAge" className="inp" placeholder="Child Age" onChange={handlechange}
                         // onChange={(e)=> setDetails({...details,cage:e.target.value})}
 
-                        {...register('age',
-                          {
-                            required: true
-                          }
-                        )}
+                        
                       />
-                      {console.log(errors)}
-                      {
-                        errors?.email?.type === "required"
-                        &&
-                        <p className="text-danger"> email is required</p>
-                      }
-
+                      
                     </Form.Group>
 
                     {/* upload image*/}
@@ -259,7 +264,7 @@ function SignUp() {
               </div>
             </div>
             <div className="submit text-center ">
-              <Button className="mt-3 sign px-5" type="submit">
+              <Button onClick={savechanges} className="mt-3 sign px-5" type="submit">
                 Sign Up
               </Button>
               <p className="">Already have an account? <span> <Link className='text-decoration-none'

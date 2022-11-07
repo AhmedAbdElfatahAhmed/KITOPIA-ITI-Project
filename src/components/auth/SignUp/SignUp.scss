@@ -1,23 +1,28 @@
-  Form {
-    .parent-child {
-      background-color: #EC9600;
-
-    }
-
-    .sign {
-      background-color: #EC9600;
-      border: 0;
-      transition: all .5s;
-
-      &:hover {
-        transform: scale(1.2);
-        background-color: #d12881;
+  
+  
+    Form {
+      height: 10px;
+      .parent-child {
+        background-color: #EC9600;
+  
       }
+  
+      .sign {
+        background-color: #EC9600;
+        border: 0;
+        transition: all .5s;
+  
+        &:hover {
+          transform: scale(1.2);
+          background-color: #d12881;
+        }
+      }
+  
+      .chimg,
+      .paimg {
+        height: 15vh;
+      }
+  
     }
-
-    .chimg,
-    .paimg {
-      height: 15vh;
-    }
-
-  }
+  
+  
