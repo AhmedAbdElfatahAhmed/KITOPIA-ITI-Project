@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import { FaHeart } from "react-icons/fa";
 import { FaCommentDots } from "react-icons/fa";
+import CommentSection from "../commentSection";
 
 const WatchVideo = () => {
   // get video id
@@ -106,21 +107,7 @@ const WatchVideo = () => {
               </div>
             </div>
             {/* Comments */}
-            <div className="comments p-3">
-              <div className="d-flex align-items-center mb-4 fs-3">
-                <FaCommentDots className="me-3 " />
-                <span>Childs Comment :</span>
-              </div>
-              <div className="comment-info d-flex align-items-center ps-5">
-                <Avatar alt="profile-pic" src={image} className="me-3 border" />
-                <div className="comment fs-3">
-                  <p className="child-name mb-0">Child Name</p>
-                  <p className="channel-name text-black-50 mb-0">
-                    Child Comment as a sticker
-                  </p>
-                </div>
-              </div>
-            </div>
+            <CommentSection></CommentSection>
           </div>
 
           {/* Recommended Videos */}

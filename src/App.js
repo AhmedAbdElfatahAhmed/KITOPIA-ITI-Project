@@ -60,7 +60,7 @@ const RequireAuth=({children})=>{
         <Route path="/comment" element={<CommentSection />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
     </AuthContextProvider>
     

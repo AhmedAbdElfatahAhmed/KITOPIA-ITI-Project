@@ -60,7 +60,7 @@ function SignUp(props) {
 
 
     }).catch(function (err) {
-      setErroer(e.message)
+      setErroer(err.message)
 
 
     })
