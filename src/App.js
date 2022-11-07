@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
 // Start Component
 import Home from "./components/Home";
 import CaVideosList from "./components/fun/cartoon_videos";
-import "./App.css";
 import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
 import FunList from "./components/fun/FunList";
@@ -15,7 +15,7 @@ import SignUp from "./components/auth/SignUp";
 import EducationList from "./components/education/EducationList";
 import EducationLevels from "./components/education/EducationVideos/Levels";
 import LevelPage from "./components/education/EducationVideos/LevelPage";
-import YounSubjectVideos from "./components/education/EducationVideos/Levels/Younger/YounSubjectVideos";
+import SubjectVideos from "./components/education/EducationVideos/SubjectVideos";
 import WatchVideo from "./components/WatchVideo";
 import Footer from "./components/Footer";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
@@ -33,7 +33,7 @@ function App() {
         <Route path="/edu/levels/:levelName" element={<LevelPage />}></Route>
         <Route
           path="/edu/levels/:levelName/:subjectName"
-          element={<YounSubjectVideos />}
+          element={<SubjectVideos />}
         ></Route>
         <Route path="/fun" element={<FunList />}></Route>
         <Route path="/cartoon" element={<CaVideosList />}></Route>
