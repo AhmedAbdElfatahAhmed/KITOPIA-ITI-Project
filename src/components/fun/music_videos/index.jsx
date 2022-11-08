@@ -14,7 +14,8 @@ const MuVideosList = () => {
   };
   console.log(videos);
   return (
-    <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
+    <div id="muVid">
+<div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
       {videos.map((video) => {
         return (
           <div className="col-xl-4" key={video.videoId}>
@@ -40,6 +41,8 @@ const MuVideosList = () => {
         );
       })}
     </div>
+    </div>
+    
   );
 };
 
