@@ -19,21 +19,6 @@ const LikedVideos = () => {
   return (
     <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
     {likedVideos.map((video,i) => {
-      const options = {
-        method: 'GET',
-        url: 'https://youtube-v3-alternative.p.rapidapi.com/video',
-        params: {id:video.id},
-        headers: {
-          'X-RapidAPI-Key': '679c40982fmsheadd8c7b09f0c6fp175affjsn2291559f1907',
-          'X-RapidAPI-Host': 'youtube-v3-alternative.p.rapidapi.com'
-        }
-      };
-      axios.request(options).then(function (response) {
-        console.log(response);
-        setDetails(response.data)
-      }).catch(function (error) {
-        // console.error(error);
-      });
       // get image video from url 
       const imageUrl = `https://img.youtube.com/vi/${video.id}/0.jpg`;
       return (
@@ -50,8 +35,8 @@ const LikedVideos = () => {
               </Link>
             </div>
             <div className="content">
-              <h4 className="my-card-text">{details.title}</h4>
-              <p>{details.channelTitle}</p>
+              <h4 className="my-card-text">{video.title}</h4>
+              <p>{details.description}</p>
             </div>
           </div>
         </div>
