@@ -1,29 +1,17 @@
-// import axios from "a2xios";
 import { useState, useEffect } from "react";
 import { fetch } from "../../../../../middleware/fetch";
 import { Link } from "react-router-dom";
 const PreSchool = () => {
-  // const [preschoolData, setPreschoolData] = useState(null);
   const [videos, setVideos] = useState([]);
-  // axios.get("http://localhost:3005/preschool").then((response) => {
-  //   setPreschoolData(response.data[0].title);
-  // });
+ 
   useEffect(() => {
-    // axios.get("http://localhost:3005/preschool").then((response) => {
-    //   setPreschoolData(response.data[0].title);
-    // });
     getVideos();
   }, []);
 
   const getVideos = () => {
-    // if (preschoolData) {
-      // console.log("preschoolData", preschoolData);
       fetch("baby learning").then((data) => setVideos(data.data));
-    // }
   };
-  console.log("videosss", videos);
-  // console.log("outer", preschoolData);
-  // getVideos();
+  console.log("videosss", videos)
   return (
     <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
     {videos.map((video) => {
