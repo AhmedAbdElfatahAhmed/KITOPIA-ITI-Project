@@ -1,3 +1,6 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Questions.scss";
@@ -17,14 +20,22 @@ const Question = () => {
       });
   }, []);
 
+  // const [correctans, setCorrectans] = useState(false);
+  const correctAnswer = () => toast.success("Correct Answer Bravoo 👏!");
+  const WrongAnswer = () => toast.error("Wrong Answer 😔!");
+
   // Func To Handel Choise
   const handelClick = (e) => {
     if (e.currentTarget.classList.contains("correct")) {
-      e.currentTarget.classList.add("bg-success", "text-white");
+      e.currentTarget.classList.add("bg-success", "text-white", "pe-none");
+      correctAnswer();
     } else {
-      e.currentTarget.classList.add("bg-danger", "text-white");
+      e.currentTarget.classList.add("bg-danger", "text-white", "pe-none");
+      WrongAnswer();
     }
   };
+
+  // Tostas
   return (
     <section className="question-wrapper py-5">
       <div className="container">
@@ -71,6 +82,7 @@ const Question = () => {
                 </div>
               );
             })}
+            <ToastContainer theme="colored" autoClose={2000} />
           </div>
         </div>
       </div>
