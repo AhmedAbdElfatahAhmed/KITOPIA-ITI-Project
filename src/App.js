@@ -29,9 +29,9 @@ import  CommentSection  from "./components/commentSection";
 function App() {
   let currentUserr  ;
  
-const RequireAuth=({children})=>{
-  return currentUserr == true?(children):<Navigate to="/login"/>
-}
+// const RequireAuth=({children})=>{
+//   return currentUserr == true?(children):<Navigate to="/edu"/>
+// }
 
   return (
     <AuthContextProvider>
@@ -43,7 +43,7 @@ const RequireAuth=({children})=>{
         <Route path="/signup" element={<SignUp db={db}/>}></Route>
         <Route path="/account" element={<Account/>}></Route>
         <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/edu" element={<RequireAuth><EducationList /></RequireAuth> }></Route>
+        <Route path="/edu" element={<EducationList />}></Route>
         <Route path="/question" element={<Question />}></Route>
         <Route path="/edu/levels" element={<EducationLevels />}></Route>
         <Route path="/edu/levels/:levelName" element={<LevelPage />}></Route>
