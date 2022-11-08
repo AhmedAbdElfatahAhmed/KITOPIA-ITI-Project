@@ -39,7 +39,6 @@ function SignUp(props) {
     profile[e.target.id] = e.target.value;
     setprofile({ ...profile, profile })
   }
-
   const savechanges = async (e) => {
 e.preventDefault()
     try {
@@ -60,7 +59,6 @@ e.preventDefault()
     
     
         })
-
     } catch (e) {
       setErroer(e.message)  
       toast("This email already exists")
