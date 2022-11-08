@@ -6,9 +6,12 @@ import {auth} from '../firebase'
 
 
 const UserContext=createContext()
+const userLoggedIn = createContext();
 
 export const AuthContextProvider=({children})=>{
     const [user,setUser]=useState({})
+    const [isLogedIn,setIsLogedIn]=useState(false);
+
     const createUser=(email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
     };
@@ -23,7 +26,7 @@ export const AuthContextProvider=({children})=>{
 
 useEffect(()=>{
 const unsubscribe=onAuthStateChanged(auth,(currentUser)=>{
-    console.log(currentUser);
+    
     setUser(currentUser);
 })
 return()=>{
@@ -32,7 +35,7 @@ return()=>{
 },[])
 
 return(
-    <UserContext.Provider value={{createUser,user,logout,signIn}}>
+    <UserContext.Provider value={{createUser,user,isLoggedin:[isLogedIn,setIsLogedIn],logout,signIn}}>
         {children}
     </UserContext.Provider>
 

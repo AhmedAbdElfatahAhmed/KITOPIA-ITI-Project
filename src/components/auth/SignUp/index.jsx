@@ -10,31 +10,21 @@ import { useState } from "react";
 import { UserAuth } from "../../Contexts/Authcontext";
 import React from "react";
 import { addDoc, collection } from "firebase/firestore/lite";
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
 function SignUp(props) {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  
 
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  // Authentication
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setErroer] = useState('')
   const { createUser } = UserAuth()
-  
-
-  const handlesubmit = async (e) => {
-    e.preventDefault()
-    setErroer('')
-    try {
-      await createUser(email, password)
-      alert("you are signup successfully")
-
-    } catch (e) {
-      setErroer(e.message)
-      console.log(e.message)
-      alert("try again")
-    }
-  }
 
   const [profile, setprofile] = useState({
     parentName: "",
@@ -50,51 +40,35 @@ function SignUp(props) {
     setprofile({ ...profile, profile })
   }
 
-  const savechanges = async () => {
-    await addDoc(collection(props.db, "user-response-saving"), {
-      parentName: profile.parentName,
-      parentDate: profile.parentDate,
-      childName: profile.childName,
-      childAge: profile.childAge,
-    }).then(function (res) {
+  const savechanges = async (e) => {
+e.preventDefault()
+    try {
+        let userToCreate = await createUser(email, password)
+        alert("succseeded: "+userToCreate.user.uid)   
+        toast("you are signup successfully")
+        await addDoc(collection(props.db, "user-response-saving"), {
+          parentName: profile.parentName,
+          parentDate: profile.parentDate,
+          childName: profile.childName,
+          childAge: profile.childAge,
+          uid: userToCreate.user.uid
+        }).then(function (res) {
+    
+    
+        }).catch(function (err) {
+          setErroer(e.message)
+    
+    
+        })
 
-
-    }).catch(function (err) {
-      setErroer(e.message)
-
-
-    })
+    } catch (e) {
+      setErroer(e.message)  
+      toast("This email already exists")
+    }
   };
 
 
-  //   const [details, setDetails] = useState({
-//     pname: '',
-//     cname: '',
-//     cage: '',
-   
-// })
 
-
-// const PostData =async(e)=>{
-//   e.preventDefault()
-
-//   const{pname,cname,cage}=details;
-
-//  const res=await fetch("https://kitopiaa-default-rtdb.firebaseio.com/kform.json",
-//  {
-//      method:'POST',
-//      headers:{
-//          'Content-Type':'application/json'
-//      },
-//      body:JSON.stringify({
-//       pname,
-//       cname,
-//       cage,
-     
-//      })
-//   })
-
-// }
   const [selectedImages, setSelectedImages] = useState([]);
 
   const onSelectFile = (event) => {
@@ -108,7 +82,6 @@ function SignUp(props) {
     setSelectedImages((previousImages) => previousImages.concat(imagesArray));
   };
 
-  const onSubmit = data => console.log(data);
   return (
     <div className="container cont">
       <div className="row">
@@ -118,7 +91,7 @@ function SignUp(props) {
           </div>
         </div>
         <div className="col-md-6">
-          <Form onSubmit={handlesubmit} className=" p-5 w-100 ">
+          <Form  className=" p-5 w-100 ">
 
             <div className="row ">
               {/* parent & child */}
@@ -134,54 +107,30 @@ function SignUp(props) {
 
                       <Form.Control
                         type="text" id="parentName" className="" placeholder="Parent Name " onChange={handlechange}
-                        // onChange={(e)=> setDetails({...details,pname:e.target.value})}
-
-                        {...register('fname',
-                          {
-                            required: true
-                          }
-                        )}
                       />
-                      {console.log(errors)}
-                      {
-                        errors?.email?.type === "required"
-                        &&
-                        <p className="text-danger"> parent name is required</p>
-                      }
-
+                      {error && <div> parent name is requried</div>}
                     </Form.Group>
-
-
                     {/* email */}
                     <Form.Group className="mb-3 inp" controlId="formBasicEmail">
-
-
                       <Form.Control
                         onChange={(e) => setEmail(e.target.value)} type="email" id="email" placeholder="Email"
                       />
+                      {error && <div>email is required</div>}
                     </Form.Group>
-
-
                     {/*password */}
                     <Form.Group className="mb-3 inp" controlId="formBasicpassword">
-
-
                       <Form.Control
                         onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password"
                       />
-                    </Form.Group>
+                      {error && <div>pawword is required</div>}
 
+                    </Form.Group>
                     {/*Date */}
                     <Form.Group className="mb-3 inp" controlId="formBasicNumber">
-
-
                       <Form.Control
-
                         type="date" id="parentDate" placeholder="date" onChange={handlechange}
-                       
                       />
-                     
-
+                      {error && <div> parent date is requried</div>}
                     </Form.Group>
 
                   </div>
@@ -198,27 +147,18 @@ function SignUp(props) {
 
                       <Form.Control
                         type="text" id="childName" className="inp" placeholder="Child Name " onChange={handlechange}
-                        // onChange={(e)=> setDetails({...details,cname:e.target.value})}
-
-                       
                       />
-                     
-
+                      {error && <div> child name isrequried</div>}
                     </Form.Group>
-
 
                     {/* child age */}
                     <Form.Group className="mb-3" controlId="formBasicage">
 
-
                       <Form.Control
 
                         type="number" id="childAge" className="inp" placeholder="Child Age" onChange={handlechange}
-                        // onChange={(e)=> setDetails({...details,cage:e.target.value})}
-
-                        
                       />
-                      
+                      {error && <div> parent age isrequried</div>}
                     </Form.Group>
 
                     {/* upload image*/}
@@ -256,10 +196,8 @@ function SignUp(props) {
                         &&
                         <p className="text-danger">phone number is required</p>
                       }
-
                     </Form.Group>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -267,11 +205,17 @@ function SignUp(props) {
               <Button onClick={savechanges} className="mt-3 sign px-5" type="submit">
                 Sign Up
               </Button>
+
               <p className="">Already have an account? <span> <Link className='text-decoration-none'
                 to="/login">Login</Link></span></p>
             </div>
+
+
           </Form>
         </div>
+      </div>
+      <div>
+        <ToastContainer />
       </div>
     </div>
 

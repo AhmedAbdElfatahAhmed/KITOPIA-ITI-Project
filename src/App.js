@@ -26,9 +26,10 @@ import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 import { db } from "./components/firebase";
 import  CommentSection  from "./components/commentSection";
 function App() {
-  let currentUserr ,children;
+  let currentUserr  ;
+ 
 const RequireAuth=({children})=>{
-  return currentUserr?(children):<Navigate to="/login"/>
+  return currentUserr == true?(children):<Navigate to="/login"/>
 }
 
   return (
@@ -60,7 +61,7 @@ const RequireAuth=({children})=>{
         <Route path="/comment" element={<CommentSection />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
     </AuthContextProvider>
     
