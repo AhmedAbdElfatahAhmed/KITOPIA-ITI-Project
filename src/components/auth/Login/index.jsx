@@ -19,6 +19,7 @@ function Login() {
   const [error, setErroer] = useState('')
   const navigate = useNavigate()
   const { signIn } = UserAuth()
+  // const { isLoggedin } = UserAuth()
 
 
   const handlesubmit = async (e) => {
@@ -26,6 +27,8 @@ function Login() {
     setErroer('')
     try {
       await signIn(email, password)
+      // isLoggedin[1](true);
+      // console.log(isLoggedin);
       navigate('/account');
       
     } catch (e) {

@@ -27,9 +27,10 @@ import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 import { db } from "./components/firebase";
 import  CommentSection  from "./components/commentSection";
 function App() {
-  let currentUserr ,children;
+  let currentUserr  ;
+ 
 const RequireAuth=({children})=>{
-  return currentUserr?(children):<Navigate to="/login"/>
+  return currentUserr == true?(children):<Navigate to="/login"/>
 }
 
   return (
