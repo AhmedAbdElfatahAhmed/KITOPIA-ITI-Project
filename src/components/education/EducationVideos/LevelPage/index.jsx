@@ -1,21 +1,8 @@
-import PreSchool from "../Levels/PreSchool";
-import Younger from "../Levels/Younger";
-import Older from "../Levels/Older";
-import { useParams } from "react-router-dom";
-
+import EducationLevel from "../Levels/EducationLevel";
 const LevelPage = () => {
-  const params = useParams();
   return (
     <div>
-      {(() => {
-        if (params.levelName === "preschool") {
-          return <PreSchool />;
-        } else if (params.levelName === "younger") {
-          return <Younger />;
-        } else {
-          return <Older />;
-        }
-      })()}
+      <EducationLevel />
     </div>
   );
 };

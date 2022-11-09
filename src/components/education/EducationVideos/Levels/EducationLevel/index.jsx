@@ -1,20 +1,23 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getSubjects } from "../../../../redux/youngerSubjectsSlice";
+import { getSubjects } from "../../../../redux/subjectsSlice";
 import { Link } from "react-router-dom";
-const Younger = () => {
+import { useParams } from "react-router-dom";
+const EducationLevel = () => {
   const dispatch = useDispatch();
+  const params = useParams();
+  const level=params.levelName
   useEffect(() => {
-    dispatch(getSubjects());
-  }, [dispatch]);
-  const { youngerSubjects } = useSelector((state) => state.youngerSubjects);
+    dispatch(getSubjects(level));
+  }, [dispatch,level]);
+  const { subjects } = useSelector((state) => state.subjects);
   return (
     <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
-      {youngerSubjects.map((subject) => {
+      {subjects.map((subject) => {
         return (
           <div className="col-xl-4 mb-5" key={subject.id}>
             <div className="my-card">
-              <Link to={`/edu/levels/younger/${subject.title}`}>
+              <Link to={`/edu/levels/${level}/${subject.title}`}>
               <div className="image w-100">
                 <img className="w-100" src={subject.img} alt={subject.title} />
               </div>
@@ -30,4 +33,4 @@ const Younger = () => {
   );
 };
 
-export default Younger;
+export default EducationLevel;

@@ -1,10 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from "axios";
 export const getSubjects = createAsyncThunk(
   "book/getBooks",
-  async (_, thunkAPI) => {
+  async (arg, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:3005/younger");
+      const response = await fetch(`http://localhost:3005/${arg}`);
       const data = await response.json();
       return data;
     } catch (err) {
@@ -14,9 +13,9 @@ export const getSubjects = createAsyncThunk(
 );
 
 // reducer
-export const youngerSubjectsSlice = createSlice({
-  name: "youngerSubjects",
-  initialState: { youngerSubjects: [] },
+export const subjectsSlice = createSlice({
+  name: "subjects",
+  initialState: { subjects: [] },
   reducers: {},
   extraReducers: {
     [getSubjects.pending]: (state, action) => {
@@ -24,12 +23,12 @@ export const youngerSubjectsSlice = createSlice({
     },
     [getSubjects.fulfilled]: (state, action) => {
       // console.log(action);
-      state.youngerSubjects = action.payload;
+      state.subjects = action.payload;
     },
-    [getSubjects.rejected]: (state, action) => {
-      // console.log(action);
+    [getSubjects.rejected]: (action) => {
+      console.log(action.payload);
     },
   },
 });
 
-export default youngerSubjectsSlice.reducer;
+export default subjectsSlice.reducer;
