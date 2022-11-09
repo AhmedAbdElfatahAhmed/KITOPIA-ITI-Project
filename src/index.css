@@ -10,7 +10,10 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: 300ms;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -41,6 +44,6 @@ body,
   width: 1.5rem;
   height: 1.5rem;
   padding: 0;
-  background-color: #d12881;
+  background-color: orange;
   border-radius: 50%;
 }

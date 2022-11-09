@@ -12,6 +12,7 @@ import {
 import { SiGnuprivacyguard } from "react-icons/si";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import DarkMode from "../DarkMode";
 
 const NavBar = () => {
   // set count liked videos from db file
@@ -78,6 +79,11 @@ const NavBar = () => {
                 <NavLink className="nav-link" to="/liked">
                   <FaHeart />
                 </NavLink>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" >
+                  <DarkMode></DarkMode>
+                </a>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/signup">

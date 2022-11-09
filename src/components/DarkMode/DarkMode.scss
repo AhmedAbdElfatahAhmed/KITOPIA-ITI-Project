@@ -1,0 +1,33 @@
+@import "../../assets/styles/base/variables";
+
+
+.darkMode {
+  .navbar {
+    background-color: $dark;
+  }
+  background-color: $dark;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  q,
+  p,
+  div {
+    color: $white;
+  }
+  .slide_description {
+    background-color: $dark;
+    h1 {
+      color: $white;
+    }
+  }
+
+  .navbar-toggler {
+    border: solid 1px #fff;
+}
+  .navbar-toggler-icon {
+    background-color: aliceblue;
+}
+}
