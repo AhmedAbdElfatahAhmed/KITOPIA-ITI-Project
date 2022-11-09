@@ -1,4 +1,7 @@
+// SCSS Files
+@import "../../../assets/styles/base/mixin";
 @import "../../../assets/styles/base/variables";
+
 .question-wrapper {
   .main-heading {
     font-family: "Flavors-Regular";
@@ -7,7 +10,6 @@
     width: fit-content;
     padding-bottom: 5px;
     margin: 0px auto 25px;
-
     color: $primary;
   }
   .single-question {
@@ -31,6 +33,22 @@
         margin: 0px 5px;
         border: 2px solid #000;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+// Media Query
+@include breakPoints(mobile) {
+  .question-wrapper {
+    .main-heading {
+      font-size: 2rem;
+    }
+    .single-question {
+      .multi-choise {
+        .choose {
+          padding: 5px 20px;
+        }
       }
     }
   }

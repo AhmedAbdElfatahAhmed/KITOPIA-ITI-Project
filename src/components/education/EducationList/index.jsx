@@ -9,20 +9,20 @@ const EducationList = () => {
   return (
     <section className="education-wrapper pt-5">
       <h1 className="edu-heading mb-5">Education</h1>
-      <div className="edu-list">
+      <div className="edu-list mb-5">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
               <div className="edu">
-                <Link className="link" to="/edu/levels">
-                  <div className="edu-icon mb-4">
+                <div className="edu-icon mb-4">
+                  <Link className="link" to="/edu/levels">
                     <img src={videoimage} alt="" />
-                  </div>
-                  <div className="edu-category">E-Videos</div>
-                </Link>
+                  </Link>
+                </div>
+                <div className="edu-category">E-Videos</div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
               <div className="edu">
                 <div className="edu-icon mb-4">
                   <img src={stories} alt="" />
@@ -30,7 +30,7 @@ const EducationList = () => {
                 <div className="edu-category">Stories</div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
               <div className="edu">
                 <div className="edu-icon mb-4">
                   <Link to={"/question"}>
