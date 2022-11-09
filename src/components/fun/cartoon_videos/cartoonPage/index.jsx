@@ -16,10 +16,11 @@ const CartoonPage = () => {
   };
 
   return (
-    <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
+    <div id="cartoonPage" >
+      <div className="container row mx-auto gy-5  pt-5 mt-5 ">
       {videos.map((video) => {
         return (
-          <div className="col-xl-4" key={video.videoId}>
+          <div className="col-sm-6 col-md-4 " key={video.videoId}>
             <div className="my-card">
               <div className="image w-100">
                 <Link to={`/watch/${video.videoId}`}>
@@ -33,7 +34,7 @@ const CartoonPage = () => {
               </div>
 
               <div className="content">
-                <h4 className="my-card-text">{video.title}</h4>
+                <h4 className="card-text">{video.title}</h4>
                 <p>{video.description}</p>
               </div>
             </div>
@@ -41,6 +42,8 @@ const CartoonPage = () => {
         );
       })}
     </div>
+    </div>
+    
   );
 };
 
