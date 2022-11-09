@@ -14,7 +14,7 @@ import {
   CardMedia,
 } from "@mui/material";
 import { FaHeart } from "react-icons/fa";
-import { FaCommentDots } from "react-icons/fa";
+
 
 const WatchVideo = () => {
   // get video id
@@ -57,7 +57,7 @@ const WatchVideo = () => {
       url: "https://youtube-v3-alternative.p.rapidapi.com/video",
       params: { id: params.id },
       headers: {
-        "X-RapidAPI-Key": "b0a191bc4dmsh0ce106e0a903ab7p1b03b1jsnbf509c7302fd",
+        "X-RapidAPI-Key": "389d894c91mshf4b4f7def540ae3p1bcc78jsn2079f211ec2d",
         "X-RapidAPI-Host": "youtube-v3-alternative.p.rapidapi.com",
       },
     };
