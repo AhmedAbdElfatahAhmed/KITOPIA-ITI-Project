@@ -12,7 +12,7 @@ export const createComment = async (text, parentId = null) => {
     body: text,
     parentId,
     userId: "1",
-    username: "John",
+    username: "Muhamed",
     createdAt: new Date().toISOString(),
   })
   return data

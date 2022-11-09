@@ -15,19 +15,20 @@ const CommentForm = ({
     setText("");
   };
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} style={{marginBottom: "10rem"}}>
       <textarea
         className="comment-form-textarea"
         value={text}
+        style={{borderRadius:".7rem",outlineColor:"red",padding:"1rem"}}
         onChange={(e) => setText(e.target.value)}
       />
-      <button className="comment-form-button" disabled={isTextareaDisabled}>
+      <button className="comment-form-button" disabled={isTextareaDisabled} style={{backgroundColor:"red"}}>
         {submitLabel}
       </button>
       {hasCancelButton && (
         <button
           type="button"
-          className="comment-form-button comment-form-cancel-button"
+          className="comment-form-button comment-form-cancel-button "
           onClick={handleCancel}
         >
           Cancel
