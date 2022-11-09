@@ -20,11 +20,11 @@ header {
             position: absolute;
             top: .5rem;
             right: .5rem;
-            color: red;
+            color: $sec-dark;
             
           }
           :hover {
-            background-color: $sec-dark;
+            background-color: $sec-light;
           }
           .nav-link {
             font-size: 1.8rem;
@@ -33,7 +33,7 @@ header {
             margin: 0 1px;
           }
           .active {
-            background-color: $sec-dark;
+            background-color: $sec-light;
           }
         }
       }
