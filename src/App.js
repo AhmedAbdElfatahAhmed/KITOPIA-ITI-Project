@@ -26,6 +26,7 @@ import Footer from "./components/Footer";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 import { db } from "./components/firebase";
 import  CommentSection  from "./components/commentSection";
+
 function App() {
   let currentUserr  ;
  
