@@ -102,7 +102,7 @@ const GamesList = () => {
           <span className="bubble"></span>
           <span className="bubble"></span>
           <span className="bubble"></span>
-          <span className="bubble"></span>
+          <span className="bubble "></span>
           <span className="bubble"></span>
           <span className="bubble"></span>
           <span className="bubble"></span>

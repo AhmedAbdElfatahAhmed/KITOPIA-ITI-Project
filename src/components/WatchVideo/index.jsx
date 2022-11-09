@@ -5,6 +5,7 @@ import thumbnail from "../../assets/images/fun/thumbnail.jpg";
 import { useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import axios from "axios";
+
 import {
   Avatar,
   Card,
@@ -81,7 +82,8 @@ const WatchVideo = () => {
               controls
               playsInline
               width="100%"
-              height="550px"
+              // height="24vh"
+              
             />
             <div className="description mb-4">
               <div className="info">

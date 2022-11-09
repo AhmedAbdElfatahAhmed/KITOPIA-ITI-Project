@@ -1,3 +1,4 @@
+@import  '../../assets/styles/base/mixin';
 .watch-wrapper {
   .description {
     display: flex;
@@ -16,10 +17,13 @@
         }
       }
     }
+
   }
+  
+  
 }
 
-
+  
 .container_comment{
   padding: 0 1rem;
   margin-bottom: 1rem;
@@ -36,6 +40,43 @@
     // color: red;
   }
 
+  
+}
+// Responsive
+@media (max-width: 2400px){
+  .video-player{
+    height: 80vh !important;
+  }
+}
+@include breakPoints(xxldesktop) {
+  .video-player{
+    height: 26vh !important;
+  }
 }
 
+@include breakPoints(xldesktop) {
+  .video-player{
+    height: 28vh !important;
+  }
+}
 
+@include breakPoints(mediumScreen) {
+  .video-player{
+    height: 40vh !important;
+  }
+}
+@include breakPoints(mobile) {
+  .video-player{
+    height: 40vh !important;
+  }
+}
+@media (max-width: 400px){
+  .video-player{
+    height: 33vh !important;
+  }
+}
+@media (max-width: 300px){
+  .video-player{
+    height: 24vh !important;
+  }
+}
