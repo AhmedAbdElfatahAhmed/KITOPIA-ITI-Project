@@ -9,7 +9,7 @@ const Younger = () => {
   }, [dispatch]);
   const { youngerSubjects } = useSelector((state) => state.youngerSubjects);
   return (
-    <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
+    <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5" id="cartoonPage">
       {youngerSubjects.map((subject) => {
         return (
           <div className="col-xl-4 mb-5" key={subject.id}>

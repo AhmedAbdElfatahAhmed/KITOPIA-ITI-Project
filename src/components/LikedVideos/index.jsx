@@ -17,7 +17,7 @@ const LikedVideos = () => {
 }, [likedVideos.id]);
 
   return (
-    <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
+    <div className="container row mx-auto gy-3  pt-5 mt-5 " id="cartoonPage">
     {likedVideos.map((video,i) => {
       // get image video from url 
       const imageUrl = `https://img.youtube.com/vi/${video.id}/0.jpg`;
@@ -35,7 +35,7 @@ const LikedVideos = () => {
               </Link>
             </div>
             <div className="content">
-              <h4 className="my-card-text">{video.title}</h4>
+              <h4 className="card-text">{video.title}</h4>
               <p>{details.description}</p>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import './Profile.scss'
 import LikedVideos from '../LikedVideos/index';
-import img from '../../assets/images/pngwing.com.png'
+import img from '../../assets/images/profille.png'
 import { Link } from 'react-router-dom';
 const Profile =()=>{
 
