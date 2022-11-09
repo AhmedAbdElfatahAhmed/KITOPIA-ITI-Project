@@ -39,7 +39,7 @@ function Login() {
     <div className="container mt-5">
       <div className="row">
         <div className="offset-md-2 col-md-8">
-          <Form onSubmit={handlesubmit} className="pt-5 px-5 mt-5 rounded-5">
+          <Form onSubmit={handlesubmit} className="pt-5 px-5 mt-5 rounded-5 auth">
             <div className="row ">
               <div className="col-md-12 login mb-3 rounded-4 pt-5">
                 <div className=" d-flex justify-content-around  text-center mb-4 py-5">

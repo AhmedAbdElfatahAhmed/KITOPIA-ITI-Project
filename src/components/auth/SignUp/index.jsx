@@ -79,7 +79,7 @@ function SignUp(props) {
     <div className="container cont">
       <div className="row">
         <div className="offset-md-2 col-md-8">
-          <Form className="w-10 mt-5 pt-3 px-5 rounded-5">
+          <Form className="w-10 mt-5 pt-3 px-5 auth rounded-5">
             <div className="row ">
             <h2 className="text-warning text-center text-capitalize">registration form</h2>
               {/* parent & child */}

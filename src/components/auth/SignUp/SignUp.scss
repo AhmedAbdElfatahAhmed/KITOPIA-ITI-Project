@@ -2,7 +2,7 @@
 @import "../../../assets/styles/base/mixin";
 @import "../../../assets/styles/base/variables";
 
-Form {
+Form.auth {
   margin-top: 40px;
   box-shadow: 0 5px 10px rgba(16, 55, 210, 0.05),
     0 15px 40px rgba(6, 25, 101, 0.2);
