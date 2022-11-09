@@ -10,7 +10,7 @@ const keys = [
     url: baseURL ,
     params: { geo: 'US', lang: 'en'  , type: 'video' , sort_by: 'relevance'},
     headers: {
-      'X-RapidAPI-Key': '389d894c91mshf4b4f7def540ae3p1bcc78jsn2079f211ec2d',
+      'X-RapidAPI-Key': '3fdbee7856msh6aea22bd9c428b2p16efdejsneaeee50a53f7',
       'X-RapidAPI-Host': 'youtube-v3-alternative.p.rapidapi.com'
     }
   };

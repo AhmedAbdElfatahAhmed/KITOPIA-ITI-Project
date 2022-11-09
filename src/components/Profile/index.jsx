@@ -1,18 +1,18 @@
 import './Profile.scss'
 import LikedVideos from '../LikedVideos/index';
-import img from '../../assets/images/pngwing.com.png'
+import img from '../../assets/images/profille.png'
 import { Link } from 'react-router-dom';
 const Profile =()=>{
 
   return(
       <div id="profile">
           <section className="h-100 gradient-custom-2">
-<div className="container py-5 h-100">
+<div className="container">
   <div className="row d-flex justify-content-center align-items-center h-100">
-    <div className="col col-lg-9 col-xl-7">
+    <div className="col-12">
       <div className="card">
         <div className="rounded-top text-white d-flex flex-row b-cover" >
-          <div className="ms-4 mt-5 d-flex flex-column p-img " >
+          <div className="ms-4 mt-5 d-flex flex-column  p-img " >
             <img src={img}
               alt="Generic placeholder image" className="img-fluid img-thumbnail mt-4 mb-2 h-100 "
               />
@@ -26,23 +26,8 @@ const Profile =()=>{
            
           </div>
         </div>
-        <div className="p-4 text-black p-nd-bg">
-          <div className="d-flex justify-content-end text-center py-1 ">
-            <div>
-              <p className="mb-1 h5">253</p>
-              <p className="small text-muted mb-0">Photos</p>
-            </div>
-            <div className="px-3">
-              <p className="mb-1 h5">1026</p>
-              <p className="small text-muted mb-0">Followers</p>
-            </div>
-            <div>
-              <p className="mb-1 h5">478</p>
-              <p className="small text-muted mb-0">Following</p>
-            </div>
-          </div>
-        </div>
-        <div className="card-body p-4 text-black">
+        
+        <div className="card-body p-4 text-black mt-5 pt-5">
           <div className="mb-5">
             <p className="lead fw-normal mb-1">About</p>
             <div className="p-4 p-about" >

@@ -9,10 +9,10 @@ const Older = () => {
   }, [dispatch]);
   const { olderSubjects } = useSelector((state) => state.olderSubjects);
   return (
-    <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
+    <div className="container row mx-auto gy-5    pt-5 mt-5 " id="cartoonPage">
       {olderSubjects.map((subject) => {
         return (
-          <div className="col-xl-4 mb-5" key={subject.id}>
+          <div className="col-sm-6 col-md-4 mb-5" key={subject.id}>
             <div className="my-card">
               <Link to={`/edu/levels/older/${subject.title}`}>
               <div className="image w-100">
