@@ -12,7 +12,7 @@ export const cartoons = [
   },
   {
     id: "3",
-    name: "spongebob",
+    name: "gumball",
     pic: "../assets/images/cartoons/spongbob.png",
   },
   {
