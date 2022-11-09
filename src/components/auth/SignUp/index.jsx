@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-// import signupImg from '../../../assets/images/auth/signup.png'
-import parentImg from "../../../assets/images/auth/parentsignup.jpg";
+import parentImg from "../../../assets/images/auth/parent.jpg";
 import childImg from "../../../assets/images/auth/childsignup.jpg";
 import "./SignUp.scss";
 import { Link } from "react-router-dom";
@@ -80,27 +79,28 @@ function SignUp(props) {
     <div className="container cont">
       <div className="row">
         <div className="offset-md-2 col-md-8">
-          <Form className="w-10 mt-5 pt-5 px-5 rounded-5">
+          <Form className="w-10 mt-5 pt-3 px-5 rounded-5">
             <div className="row ">
+            <h2 className="text-warning text-center text-capitalize">registration form</h2>
               {/* parent & child */}
               <div className="col-md-6 rounded-5 parent-child w-100 m-auto  card shadow py-4">
                 {/* parent */}
-                <div className="parent d-flex justify-content-around    py-">
+                <div className="parent d-flex justify-content-around">
                   <div className="image mb-3 d-flex  align-items-center">
                     <img
-                      className="w-100  rounded-circle paimg"
+                      className="paimg"
                       src={parentImg}
                       alt=""
                     />
                   </div>
-                  <div className="iputs w-50  px-">
+                  <div className="iputs">
                     {/* parent Name */}
                     <Form.Group className="mb-3 inp" controlId="formBasicName">
                       <Form.Control
                         type="text"
                         id="parentName"
                         className=""
-                        placeholder="Parent Name "
+                        placeholder="Parent Name"
                         onChange={handlechange}
                       />
                       {error && <div> parent name is requried</div>}
@@ -125,7 +125,7 @@ function SignUp(props) {
                         type="password"
                         placeholder="password"
                       />
-                      {error && <div>pawword is required</div>}
+                      {error && <div>pssaword is required</div>}
                     </Form.Group>
                     {/*Date */}
                     <Form.Group
@@ -143,15 +143,15 @@ function SignUp(props) {
                   </div>
                 </div>
                 {/* child */}
-                <div className="child d-flex justify-content-around     py-">
+                <div className="child d-flex justify-content-around">
                   <div className="image mb-3 d-flex  align-items-center">
                     <img
-                      className="w-100 rounded-circle chimg"
+                      className="chimg"
                       src={childImg}
                       alt=""
                     />
                   </div>
-                  <div className="iputs w-50 px-">
+                  <div className="iputs">
                     {/* child Name */}
                     <Form.Group className="mb-3" controlId="formBasicName">
                       <Form.Control
@@ -161,7 +161,7 @@ function SignUp(props) {
                         placeholder="Child Name "
                         onChange={handlechange}
                       />
-                      {error && <div> child name isrequried</div>}
+                      {error && <div> child name is requried</div>}
                     </Form.Group>
 
                     {/* child age */}
@@ -173,7 +173,7 @@ function SignUp(props) {
                         placeholder="Child Age"
                         onChange={handlechange}
                       />
-                      {error && <div> parent age isrequried</div>}
+                      {error && <div> parent age is requried</div>}
                     </Form.Group>
 
                     {/* upload image*/}
@@ -190,12 +190,12 @@ function SignUp(props) {
                               />
                               <button
                                 onClick={uploadImg}
-                                className="btn btn-primary text-white fs-6 fw-bold"
+                                className="btn btn-warning text-white fs-6 fw-bold rounded-3"
                               >
-                                Upload child image
+                                Upload Child Image
                               </button>
                             </div>
-                            <div className="offset-md-3 col-md-3 ">
+                            <div className="col-md-6">
                               <div className="images w-100">
                                 {selectedImages &&
                                   selectedImages.map((image) => {
@@ -203,7 +203,7 @@ function SignUp(props) {
                                       <div key={image} className="image ">
                                         <img
                                           src={image}
-                                          className="w-100 card "
+                                          className="w-100 card"
                                           alt="upload"
                                         />
                                       </div>
@@ -226,16 +226,15 @@ function SignUp(props) {
             <div className="submit text-center ">
               <Button
                 onClick={savechanges}
-                className="my-3 sign px-5"
+                className="my-3 sign px-5 rounded-3"
                 type="submit"
               >
                 Sign Up
               </Button>
 
               <p className="pb-2">
-                Already have an account?{" "}
+                Already have an account?
                 <span>
-                  {" "}
                   <Link className="link" to="/login">
                     Login
                   </Link>
