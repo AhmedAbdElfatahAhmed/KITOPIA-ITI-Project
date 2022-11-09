@@ -45,24 +45,24 @@
 // Responsive
 @media (max-width: 2400px){
   .video-player{
-    height: 80vh !important;
+    height: 75vh !important;
   }
 }
 @include breakPoints(xxldesktop) {
   .video-player{
-    height: 26vh !important;
+    height: 55vh !important;
   }
 }
 
 @include breakPoints(xldesktop) {
   .video-player{
-    height: 28vh !important;
+    height: 50vh !important;
   }
 }
 
 @include breakPoints(mediumScreen) {
   .video-player{
-    height: 40vh !important;
+    height: 45vh !important;
   }
 }
 @include breakPoints(mobile) {
