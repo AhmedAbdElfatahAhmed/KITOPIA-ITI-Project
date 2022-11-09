@@ -5,19 +5,17 @@ import spoongebob from '../../../assets/images/cartoons/spongebob.png'
 const CaVideosList = () => {
   return (
     <div id='carVid'>
-      <main className="site-wrapper">
-        <div className="pt-table desktop-768">
-          <div className="pt-tablecell page-home relative">
-            <div className="overlay"></div>
-
-            <div className="container">
-              <div className="row">
-                <div className="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8 row g-5">
+      <main className="site-wrapper container">
+        <div className="pt-table ">
+          <div className="pt-tablecell page-home ">
+              <div className="mt-5">
+                <div className=" row gx-0">
                   {cartoons.map((cartoon) => {
                     return (
-                      <Link to={`../cartoon/page/${cartoon.name}`} className="col-3">
-                      <div className="hexagon-menu clear ">
-                        <div className="hexagon-item">
+                      <Link to={`../cartoon/page/${cartoon.name}`} className=" col-12  col-sm-4 me-sm-5 col-md-3 me-md-3 col-lg-2 me-lg-5 col-xl-2  me-xl-1 gy-5"
+                      >
+                      <div className="hexagon-menu clear  ">
+                        <div className="hexagon-item ">
                           <div className="hex-item">
                             <div></div>
                             <div></div>
@@ -58,7 +56,7 @@ const CaVideosList = () => {
                   })}
                 </div>
               </div>
-            </div>
+            
           </div>
         </div>
       </main>
