@@ -4,6 +4,10 @@
 
 header {
   .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
     background-color: $primary;
     padding: 0;
     .navbar-brand {
@@ -16,13 +20,6 @@ header {
       .navbar-nav {
         .nav-item {
           position: relative;
-          .count_liked_videos{
-            position: absolute;
-            top: .5rem;
-            right: .5rem;
-            color: $sec-dark;
-            
-          }
           :hover {
             background-color: $sec-light;
           }
@@ -57,7 +54,7 @@ header {
           padding-top: 20px;
           .nav-item {
             .nav-link {
-              font-size: 1.4rem;
+              font-size: 1rem;
             }
           }
         }

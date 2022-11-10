@@ -6,7 +6,7 @@ export const getComments = async () => {
   return data
 };
 
-export const createComment = async (text, parentId = null) => {
+export const createComment = async (text, parentId = null, watchId) => {
   const {data}=await axios.post(baseURL,{
     id: Math.random().toString(36).substr(2, 9),
     body: text,
@@ -14,6 +14,15 @@ export const createComment = async (text, parentId = null) => {
     userId: "1",
     username: "Muhamed",
     createdAt: new Date().toISOString(),
+    watchId:watchId,
+    // [watchId]: {
+    //   id: Math.random().toString(36).substr(2, 9),
+    //   body: text,
+    //   parentId,
+    //   userId: "1",
+    //   username: "Muhamed",
+    //   createdAt: new Date().toISOString(),
+    // },
   })
   return data
 };
