@@ -11,8 +11,9 @@ import React from "react";
 import { addDoc, collection } from "firebase/firestore/lite";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { getAuth, createUserWithEmailAndPassword,updateProfile  } from "firebase/auth";
 function SignUp(props) {
+  const auth = getAuth();
   const {
     register,
     handleSubmit,
@@ -21,6 +22,7 @@ function SignUp(props) {
   // Authentication
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [displayName ,setDisplayName] = useState("");
   const [error, setErroer] = useState("");
   const { createUser } = UserAuth();
 
@@ -39,15 +41,32 @@ function SignUp(props) {
   const savechanges = async (e) => {
     e.preventDefault();
     try {
-      let userToCreate = await createUser(email, password);
-      alert("succseeded: " + userToCreate.user.uid);
+      let users = await  createUserWithEmailAndPassword(auth ,email, password).then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user
+        updateProfile(auth.currentUser, {
+          displayName: displayName, photoURL: "https://firebasestorage.googleapis.com/v0/b/kitopiaa.appspot.com/o/users%2Fktopia.png?alt=media&token=255b238b-2d1e-418c-837f-98d15705d951",
+          parentName :displayName
+        }).then(() => {
+          // Profile updated!
+          // ...
+        }).catch((error) => {
+          // An error occurred
+          // ...
+        });
+        console.log(user)
+        // ...
+      })
+      
+      
+      console.log(users)
       toast("you are signup successfully");
       await addDoc(collection(props.db, "user-response-saving"), {
         parentName: profile.parentName,
         parentDate: profile.parentDate,
         childName: profile.childName,
         childAge: profile.childAge,
-        uid: userToCreate.user.uid,
+        uid: users.user.uid,
       })
         .then(function (res) {})
         .catch(function (err) {
@@ -95,7 +114,7 @@ function SignUp(props) {
                   </div>
                   <div className="iputs">
                     {/* parent Name */}
-                    <Form.Group className="mb-3 inp" controlId="formBasicName">
+                    <Form.Group className="mb-3 inp" >
                       <Form.Control
                         type="text"
                         id="parentName"
@@ -106,7 +125,7 @@ function SignUp(props) {
                       {error && <div> parent name is requried</div>}
                     </Form.Group>
                     {/* email */}
-                    <Form.Group className="mb-3 inp" controlId="formBasicEmail">
+                    <Form.Group className="mb-3 inp" >
                       <Form.Control
                         onChange={(e) => setEmail(e.target.value)}
                         type="email"
@@ -118,7 +137,7 @@ function SignUp(props) {
                     {/*password */}
                     <Form.Group
                       className="mb-3 inp"
-                      controlId="formBasicpassword"
+                     
                     >
                       <Form.Control
                         onChange={(e) => setPassword(e.target.value)}
@@ -130,7 +149,7 @@ function SignUp(props) {
                     {/*Date */}
                     <Form.Group
                       className="mb-3 inp"
-                      controlId="formBasicNumber"
+                     
                     >
                       <Form.Control
                         type="date"
@@ -153,19 +172,20 @@ function SignUp(props) {
                   </div>
                   <div className="iputs">
                     {/* child Name */}
-                    <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Group className="mb-3" >
                       <Form.Control
+                      
                         type="text"
                         id="childName"
                         className="inp"
                         placeholder="Child Name "
-                        onChange={handlechange}
+                        onChange={(e) => setDisplayName(e.target.value)}
                       />
                       {error && <div> child name is requried</div>}
                     </Form.Group>
 
                     {/* child age */}
-                    <Form.Group className="mb-3" controlId="formBasicage">
+                    <Form.Group className="mb-3" >
                       <Form.Control
                         type="number"
                         id="childAge"
@@ -177,7 +197,7 @@ function SignUp(props) {
                     </Form.Group>
 
                     {/* upload image*/}
-                    <Form.Group className="mb-3" controlId="formBasicimage">
+                    <Form.Group className="mb-3" >
                       <section>
                         <div className="uploading">
                           <div className="row">
@@ -214,7 +234,7 @@ function SignUp(props) {
                           </div>
                         </div>
                       </section>
-                      {console.log(errors)}
+                      
                       {errors?.email?.type === "required" && (
                         <p className="text-danger">phone number is required</p>
                       )}
