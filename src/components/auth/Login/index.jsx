@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { UserAuth } from "../../Contexts/Authcontext";
 import { getAuth } from "firebase/auth";
+import { ToastContainer, toast } from "react-toastify";
 function Login() {
   const auth = getAuth();
   const user = auth.currentUser;
@@ -32,7 +33,7 @@ function Login() {
     } catch (e) {
       setErroer(e.message);
       console.log(e.message);
-      alert("invalid email or password");
+     toast(e.message)
     }
   };
 
@@ -101,6 +102,7 @@ function Login() {
             </Form>
           </div>
         </div>
+        <ToastContainer />
       </div>
     );
   

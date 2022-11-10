@@ -50,7 +50,7 @@ function SignUp(props) {
           parentName :displayName
         }).then(() => {
           // Profile updated!
-          // ...
+          toast("All in! Welcome in Kitopia");
         }).catch((error) => {
           // An error occurred
           // ...
@@ -58,24 +58,10 @@ function SignUp(props) {
         console.log(user)
         // ...
       })
-      
-      
-      console.log(users)
-      toast("you are signup successfully");
-      await addDoc(collection(props.db, "user-response-saving"), {
-        parentName: profile.parentName,
-        parentDate: profile.parentDate,
-        childName: profile.childName,
-        childAge: profile.childAge,
-        uid: users.user.uid,
-      })
-        .then(function (res) {})
-        .catch(function (err) {
-          setErroer(e.message);
-        });
     } catch (e) {
       setErroer(e.message);
-      toast("This email already exists");
+      toast(error);
+      console.log(error.error)
     }
   };
 
