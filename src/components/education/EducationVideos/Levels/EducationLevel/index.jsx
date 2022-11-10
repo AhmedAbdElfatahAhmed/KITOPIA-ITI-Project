@@ -12,14 +12,14 @@ const EducationLevel = () => {
   }, [dispatch,level]);
   const { subjects } = useSelector((state) => state.subjects);
   return (
-    <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5">
+    <div className="container row mx-auto gy-3  pt-5 mt-5" id="cardWrap">
       {subjects.map((subject) => {
         return (
-          <div className="col-xl-4 mb-5" key={subject.id}>
+          <div className="col-12 col-md-6 col-xl-4 mb-5" key={subject.id}>
             <div className="my-card">
               <Link to={`/edu/levels/${level}/${subject.title}`}>
-              <div className="image w-100">
-                <img className="w-100" src={subject.img} alt={subject.title} />
+              <div className="image w-100 rounded " >
+                <img className="w-100 h-100 rounded" src={subject.img} alt={subject.title} />
               </div>
               </Link>
               <div className="content">

@@ -15,16 +15,16 @@ const SubjectVideos = () => {
   };
   console.log("videosss", videos);
   return (
-    <div className="container row mx-auto gy-3 .justify-content-center  position-relative align-items-center pt-5 mt-5" id="cartoonPage">
+    <div className="container row mx-auto gy-3 pt-5 mt-5" id="cardWrap">
       {videos.map((video) => {
         return (
-          <div className="col-xl-4" key={video.videoId}>
+          <div className="col-12 col-md-6 col-xl-4" key={video.videoId}>
             <div className="my-card">
               <div className="image w-100">
                 <Link to={`/watch/${video.videoId}`}>
                   {" "}
                   <img
-                    className="w-100"
+                    className="w-100 "
                     src={video.thumbnail[0].url}
                     alt="thumbnail"
                   />

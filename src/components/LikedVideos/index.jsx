@@ -17,7 +17,7 @@ const LikedVideos = () => {
 }, [likedVideos.id]);
 
   return (
-    <div className="container row mx-auto gy-3  pt-5 mt-5 " id="cartoonPage">
+    <div className="container row mx-auto gy-3  pt-5 mt-5 " id="cardWrap">
     {likedVideos.map((video,i) => {
       // get image video from url 
       const imageUrl = `https://img.youtube.com/vi/${video.id}/0.jpg`;
