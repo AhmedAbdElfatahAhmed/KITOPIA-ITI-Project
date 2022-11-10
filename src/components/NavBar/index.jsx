@@ -26,12 +26,7 @@ const NavBar = () => {
     // get user info
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        console.log("yes");
-      } else {
-        console.log("no");
-      }
+      setUser(user)
     });
     // get Liked length
     axios
