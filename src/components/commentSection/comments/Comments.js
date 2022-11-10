@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CommentForm from "./CommentForm";
 import Comment from "./Comment";
+import { useParams } from "react-router-dom";
 import {
   getComments as getCommentsApi,
   createComment as createCommentApi,
@@ -21,8 +22,10 @@ const Comments = ({ commentsUrl, currentUserId }) => {
         (a, b) =>
           new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
       );
-  const addComment = (text, parentId) => {
-    createCommentApi(text, parentId).then((comment) => {
+
+      const params = useParams()
+  const addComment = (text, parentId,watchId=params.id) => {
+    createCommentApi(text, parentId,watchId).then((comment) => {
       setBackendComments([comment, ...backendComments]);
       setActiveComment(null);
     });
