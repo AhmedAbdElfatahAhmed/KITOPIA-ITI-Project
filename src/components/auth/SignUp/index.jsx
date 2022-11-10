@@ -23,8 +23,9 @@ function SignUp(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName ,setDisplayName] = useState("");
+
   const [error, setErroer] = useState("");
-  const { createUser } = UserAuth();
+  
 
   const [profile, setprofile] = useState({
     parentName: "",
@@ -142,6 +143,7 @@ function SignUp(props) {
                       <Form.Control
                         onChange={(e) => setPassword(e.target.value)}
                         type="password"
+                        id="password"
                         placeholder="password"
                       />
                       {error && <div>pssaword is required</div>}
@@ -244,10 +246,12 @@ function SignUp(props) {
               </div>
             </div>
             <div className="submit text-center ">
+              
               <Button
                 onClick={savechanges}
                 className="my-3 sign px-5 rounded-3"
                 type="submit"
+                disabled={ !email ||  !displayName ||  !password?true:false}
               >
                 Sign Up
               </Button>
