@@ -20,13 +20,6 @@ header {
       .navbar-nav {
         .nav-item {
           position: relative;
-          .count_liked_videos{
-            position: absolute;
-            top: .5rem;
-            right: .5rem;
-            color: $sec-dark;
-            
-          }
           :hover {
             background-color: $sec-light;
           }
