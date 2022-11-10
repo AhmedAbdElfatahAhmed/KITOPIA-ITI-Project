@@ -14,7 +14,7 @@ const MuVideosList = () => {
   };
   console.log(videos);
   return (
-    <div id="muVid">
+    <div id="cardWrap">
 <div className="container row mx-auto gy-5  pt-5 mt-5">
       {videos.map((video) => {
         return (

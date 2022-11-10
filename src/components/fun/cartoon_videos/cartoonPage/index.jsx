@@ -16,7 +16,7 @@ const CartoonPage = () => {
   };
 
   return (
-    <div id="cartoonPage" >
+    <div id="cardWrap" >
       <div className="container row mx-auto gy-5  pt-5 mt-5 ">
       {videos.map((video) => {
         return (
