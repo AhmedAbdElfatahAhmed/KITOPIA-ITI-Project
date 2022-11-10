@@ -10,14 +10,29 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import { SiGnuprivacyguard } from "react-icons/si";
+import { BsPersonFill } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import DarkMode from "../DarkMode";
 
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 const NavBar = () => {
   // set count liked videos from db file
   const [countLiked, setCountLiked] = useState(0);
+  const [user, setUser] = useState({});
+
   useEffect(() => {
+    // get user info
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+        console.log("yes");
+      } else {
+        console.log("no");
+      }
+    });
     // get Liked length
     axios
       .get(`http://localhost:3005/likedVideos`)
@@ -70,31 +85,23 @@ const NavBar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                {/* check countLiked > 0 */}
-                {countLiked > 0 ? (
-                  <p className="count_liked_videos">{countLiked}</p>
-                ) : (
-                  <p className="count_liked_videos"></p>
-                )}
-                <NavLink className="nav-link" to="/liked">
-                  <FaHeart />
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" >
+                <a className="nav-link">
                   <DarkMode></DarkMode>
                 </a>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/signup">
-                  <SiGnuprivacyguard />
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/login">
-                  <FaSignInAlt />
-                </NavLink>
-              </li>
+              {user ? (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/profile">
+                    <BsPersonFill />
+                  </NavLink>
+                </li>
+              ) : (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/login">
+                    < FaSignInAlt/>
+                  </NavLink>
+                </li>
+              )}
             </ul>
           </div>
         </div>
