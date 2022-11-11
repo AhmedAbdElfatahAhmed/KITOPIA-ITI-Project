@@ -1,6 +1,5 @@
-
 import "./App.css";
-import { BrowserRouter, Navigate, Route, Routes, } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 // Start Component
 import Home from "./components/Home";
 import CaVideosList from "./components/fun/cartoon_videos";
@@ -25,48 +24,49 @@ import WatchVideo from "./components/WatchVideo";
 import Footer from "./components/Footer";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 import { db } from "./components/firebase";
-import  CommentSection  from "./components/commentSection";
+import CommentSection from "./components/commentSection";
+import ToTop from "./components/ToTop";
 
 function App() {
-  let currentUserr  ;
- 
-// const RequireAuth=({children})=>{
-//   return currentUserr == true?(children):<Navigate to="/edu"/>
-// }
+  let currentUserr;
+
+  // const RequireAuth=({children})=>{
+  //   return currentUserr == true?(children):<Navigate to="/edu"/>
+  // }
 
   return (
     <AuthContextProvider>
-<BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route exact path="/" element={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<SignUp db={db}/>}></Route>
-        <Route path="/account" element={<Account/>}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/edu" element={<EducationList />}></Route>
-        <Route path="/question" element={<Question />}></Route>
-        <Route path="/edu/levels" element={<EducationLevels />}></Route>
-        <Route path="/edu/levels/:levelName" element={<LevelPage />}></Route>
-        <Route
-          path="/edu/levels/:levelName/:subjectName"
-          element={<SubjectVideos />}
-        ></Route>
-        <Route path="/fun" element={<FunList />}></Route>
-        <Route path="/cartoon" element={<CaVideosList />}></Route>
-        <Route path="/music" element={<MuVideosList />}></Route>
-        <Route path="/watch/:id" element={<WatchVideo />}></Route>
-        <Route path="/cartoon/page/:name" element={<CartoonPage />}></Route>
-        <Route path="/games" element={<GamesList />}></Route>
-        <Route path="/cardgame" element={<CardGame />}></Route>
-        <Route path="/liked" element={<LikedVideos />}></Route>
-        <Route path="/comment" element={<CommentSection />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+      <BrowserRouter>
+        <ToTop />
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/signup" element={<SignUp db={db} />}></Route>
+          <Route path="/account" element={<Account />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/edu" element={<EducationList />}></Route>
+          <Route path="/question" element={<Question />}></Route>
+          <Route path="/edu/levels" element={<EducationLevels />}></Route>
+          <Route path="/edu/levels/:levelName" element={<LevelPage />}></Route>
+          <Route
+            path="/edu/levels/:levelName/:subjectName"
+            element={<SubjectVideos />}
+          ></Route>
+          <Route path="/fun" element={<FunList />}></Route>
+          <Route path="/cartoon" element={<CaVideosList />}></Route>
+          <Route path="/music" element={<MuVideosList />}></Route>
+          <Route path="/watch/:id" element={<WatchVideo />}></Route>
+          <Route path="/cartoon/page/:name" element={<CartoonPage />}></Route>
+          <Route path="/games" element={<GamesList />}></Route>
+          <Route path="/cardgame" element={<CardGame />}></Route>
+          <Route path="/liked" element={<LikedVideos />}></Route>
+          <Route path="/comment" element={<CommentSection />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </AuthContextProvider>
-    
   );
 }
 
