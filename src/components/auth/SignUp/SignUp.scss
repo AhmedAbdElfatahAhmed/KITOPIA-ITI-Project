@@ -49,7 +49,7 @@ Form.auth {
 // Media Query
 @include breakPoints(mobile) {
 
-  form
+  form.auth
   {
     .chimg,
     .paimg {
