@@ -1,20 +1,23 @@
-import { Link } from 'react-router-dom'
-import './CaVideosList.scss'
-import { cartoons } from '../../../middleware/data'
-import spoongebob from '../../../assets/images/cartoons/spongebob.png'
+import { Link } from "react-router-dom";
+import "./CaVideosList.scss";
+import { cartoons } from "./cartoonData";
+import spoongebob from "../../../assets/images/cartoons/spongebob.png";
 const CaVideosList = () => {
   return (
-    <div id='carVid'>
+    <div id="carVid">
       <main className="site-wrapper container">
         <div className="pt-table ">
           <div className="pt-tablecell page-home ">
-              <div className="mt-5">
-                <div className=" row gx-0">
-                  {cartoons.map((cartoon) => {
-                    return (
-                      <Link to={`../cartoon/page/${cartoon.name}`} className=" col-12  col-sm-4 me-sm-5 col-md-3 me-md-3 col-lg-2 me-lg-5 col-xl-2  me-xl-1 gy-5"
-                      >
-                      <div className="hexagon-menu clear  ">
+            <div className="mt-5">
+              <div className=" row gx-0">
+                {cartoons.map((cartoon) => {
+                  return (
+                    <Link
+                      to={`../cartoon/page/${cartoon.name}`}
+                      className=" col-12  col-sm-4 me-sm-5 col-md-3 me-md-3 col-lg-2 me-lg-5 col-xl-2  me-xl-1 gy-5"
+                      key={cartoon.id}
+                    >
+                      <div className="hexagon-menu clear">
                         <div className="hexagon-item ">
                           <div className="hex-item">
                             <div></div>
@@ -50,18 +53,16 @@ const CaVideosList = () => {
                           </a>
                         </div>
                       </div>
-                      </Link>
-                      
-                    )
-                  })}
-                </div>
+                    </Link>
+                  );
+                })}
               </div>
-            
+            </div>
           </div>
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default CaVideosList
+export default CaVideosList;
