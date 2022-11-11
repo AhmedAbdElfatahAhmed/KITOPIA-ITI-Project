@@ -29,7 +29,7 @@ const CaVideosList = () => {
                             <div></div>
                             <div></div>
                           </div>
-                          <a className="hex-content">
+                          <div className="hex-content">
                             <span className="hex-content-inner">
                               <span className="icon">
                                 <img
@@ -50,7 +50,7 @@ const CaVideosList = () => {
                                 fill="#ec9600"
                               ></path>
                             </svg>
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </Link>
