@@ -1,11 +1,11 @@
+import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const getSubjects = createAsyncThunk(
   "book/getBooks",
   async (arg, thunkAPI) => {
     try {
-      const response = await fetch(`http://localhost:3005/${arg}`);
-      const data = await response.json();
-      return data;
+      const response = await axios.get(`http://localhost:3005/${arg}`);
+      return response.data;
     } catch (err) {
       console.log(err);
     }
