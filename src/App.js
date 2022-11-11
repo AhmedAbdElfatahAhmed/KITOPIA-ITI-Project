@@ -25,7 +25,7 @@ import Footer from "./components/Footer";
 import CartoonPage from "./components/fun/cartoon_videos/cartoonPage";
 import { db } from "./components/firebase";
 import CommentSection from "./components/commentSection";
-import ToTop from "./components/ToTop";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   let currentUserr;
@@ -37,7 +37,7 @@ function App() {
   return (
     <AuthContextProvider>
       <BrowserRouter>
-        <ToTop />
+        <ScrollToTop />
         <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
