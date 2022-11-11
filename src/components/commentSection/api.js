@@ -29,11 +29,13 @@ export const createComment = async (text, parentId = null, watchId) => {
 
 export const updateComment = async (text) => {
   const {data}=await axios.post(baseURL,{ text })
+  console.log(data);
   return text ;
 
 };
 
 export const deleteComment = async (id) => {
   const {data}=await axios.delete(`${baseURL}/${id}`)
+  console.log(data);
   return {};
 };
