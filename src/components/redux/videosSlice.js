@@ -25,18 +25,18 @@ export const getVideos = createAsyncThunk(
 // reducer
 export const videosSlice = createSlice({
   name: "videos",
-  initialState: { videos: [] },
+  initialState: { videos: [], isLoading: false },
   reducers: {},
   extraReducers: {
-    [getVideos.pending]: (state, action) => {
-      // console.log(action);
+    [getVideos.pending]: (state) => {
+      state.isLoading = true;
     },
     [getVideos.fulfilled]: (state, action) => {
-      // console.log(action);
+      state.isLoading = false;
       state.videos = action.payload;
     },
-    [getVideos.rejected]: (action) => {
-      console.log(action.payload);
+    [getVideos.rejected]: (state) => {
+      state.isLoading = false;
     },
   },
 });
