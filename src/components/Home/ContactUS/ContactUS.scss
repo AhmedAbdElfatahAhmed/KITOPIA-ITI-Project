@@ -1,9 +1,12 @@
 .contact-us-section {
   .contact {
-    box-shadow: 0 5px 10px rgba(78, 78, 80, 0.05),
+    box-shadow: 1px 4px 1px #80808057,
       0 15px 40px rgba(6, 25, 101, 0.2);
-    background-color: #d12881;
     color: #fff;
+    .form-control {
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      box-shadow: 1px 4px 1px #80808057;
+    }
     button.submit {
       background-color: #ec9600;
     }

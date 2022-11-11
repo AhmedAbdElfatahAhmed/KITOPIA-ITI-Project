@@ -3,7 +3,6 @@
 @import "../../../assets/styles/base/variables";
 
 .fun-wrapper {
-  background-image: url(../../../assets/images/fun/tom&gery.jpg);
   background-position: center center;
   background-size: cover;
   height: calc(100vh - 63px);
@@ -26,7 +25,7 @@
       .fun-icon {
         text-align: center;
         img {
-          width: 50%;
+          width: 30%;
           cursor: pointer;
         }
         .bee {
