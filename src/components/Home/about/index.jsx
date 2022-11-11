@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.scss";
-import { FaStar, FaChild } from "react-icons/fa";
+import {FaChild } from "react-icons/fa";
 import Carousel from "react-bootstrap/Carousel";
 import slide1 from "../../../assets/images/home/about/about1.jpg";
 import slide2 from "../../../assets/images/home/about/about2.jpg";

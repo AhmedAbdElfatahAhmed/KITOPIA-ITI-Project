@@ -10,7 +10,6 @@ const SubjectVideos = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getVideos();
     dispatch(getVideos(subjName));
   }, [dispatch, subjName]);
 

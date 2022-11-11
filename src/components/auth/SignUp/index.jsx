@@ -6,17 +6,13 @@ import childImg from "../../../assets/images/auth/childsignup.jpg";
 import "./SignUp.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { UserAuth } from "../../Contexts/Authcontext";
 import React from "react";
-import { addDoc, collection } from "firebase/firestore/lite";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getAuth, createUserWithEmailAndPassword,updateProfile  } from "firebase/auth";
 function SignUp(props) {
   const auth = getAuth();
   const {
-    register,
-    handleSubmit,
     formState: { errors },
   } = useForm();
   // Authentication
@@ -44,6 +40,7 @@ function SignUp(props) {
     try {
       let users = await  createUserWithEmailAndPassword(auth ,email, password).then((userCredential) => {
         // Signed in 
+        console.log(users);
         const user = userCredential.user
         updateProfile(auth.currentUser, {
           displayName: displayName, photoURL: "https://firebasestorage.googleapis.com/v0/b/kitopiaa.appspot.com/o/users%2Fktopia.png?alt=media&token=255b238b-2d1e-418c-837f-98d15705d951",

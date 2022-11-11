@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Start Component
 import Home from "./components/Home";
 import CaVideosList from "./components/fun/cartoon_videos";
@@ -28,12 +28,6 @@ import CommentSection from "./components/commentSection";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-  let currentUserr;
-
-  // const RequireAuth=({children})=>{
-  //   return currentUserr == true?(children):<Navigate to="/edu"/>
-  // }
-
   return (
     <AuthContextProvider>
       <BrowserRouter>

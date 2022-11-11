@@ -34,8 +34,7 @@ const WatchVideo = () => {
     title: "SpongeBob Schwammkopf | Das Beste aus Staffel 2 in 50 Minuten | Nickelodeon Deutschland",
     description: "If you were up against Bikini Bottom's most famous fry cook, what would be your weapon of choice? Perhaps a snowball cannon.",
   });
-  
-
+console.log(setLiked)
   useEffect(() => {
     // get (liked or not) video from json db file
     axios
@@ -48,7 +47,7 @@ const WatchVideo = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [params.id]);
 
   useEffect(() => {
     // get videos details in db file
