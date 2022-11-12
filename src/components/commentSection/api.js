@@ -1,9 +1,9 @@
 import axios from "axios";
 import { getAuth } from "firebase/auth";
-const baseURL = "http://localhost:3005/"
+const baseURL = "http://localhost:3005/comments"
 
 export const getComments = async () => {
-  const {data}=  await axios.get(`${baseURL}`)
+  const {data}=  await axios.get(baseURL)
   return data
 };
 

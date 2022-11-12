@@ -15,7 +15,7 @@ const CommentForm = ({
     setText("");
   };
   return (
-    <form onSubmit={onSubmit} style={{marginBottom: "10rem"}}>
+    <form onSubmit={onSubmit} style={{marginBottom: "2rem"}}>
       <textarea
         className="comment-form-textarea"
         value={text}
