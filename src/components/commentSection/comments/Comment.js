@@ -1,5 +1,5 @@
 import CommentForm from "./CommentForm";
-
+import { getAuth } from "firebase/auth";
 const Comment = ({
   comment,
   replies,
@@ -11,6 +11,9 @@ const Comment = ({
   parentId = null,
   currentUserId,
 }) => {
+  const auth = getAuth();
+  const user = auth.currentUser;
+  const img = user.photoURL
   const isEditing =
     activeComment &&
     activeComment.id === comment.id &&
@@ -28,8 +31,9 @@ const Comment = ({
   const createdAt = new Date(comment.createdAt).toLocaleTimeString();
   return (
     <div key={comment.id} className="comment">
-      <div className="comment-image-container">
-        <img src="/user-icon.png" alt="" />
+      <div className="comment-image-container ">
+        <img src={img}  className="w-100"/>
+
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
