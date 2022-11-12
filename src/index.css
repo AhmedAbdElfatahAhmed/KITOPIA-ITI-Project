@@ -41,15 +41,6 @@ body,
   flex-direction: column;
 }
 
-.carousel-indicators [data-bs-target] {
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: 0;
-  background-color: orange;
-  border-radius: 50%;
-}
-
  .fun-heading {
   margin-top: 20rem;
-
 }

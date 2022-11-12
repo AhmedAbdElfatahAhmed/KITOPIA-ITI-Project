@@ -1,47 +1,54 @@
-import { createContext, useContext, useEffect, useState } from "react"
-import {createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged} from 'firebase/auth'
-import {auth} from '../firebase'
+import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { auth } from "../firebase";
 
+const UserContext = createContext();
 
+export const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState({});
+  const [isLogedIn, setIsLogedIn] = useState(false);
 
+  const createUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-const UserContext=createContext()
-const userLoggedIn = createContext();
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
-export const AuthContextProvider=({children})=>{
-    const [user,setUser]=useState({})
-    const [isLogedIn,setIsLogedIn]=useState(false);
+  const logout = () => {
+    return signOut(auth);
+  };
 
-    const createUser=(email,password)=>{
-        return createUserWithEmailAndPassword(auth,email,password)
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => {
+      unsubscribe();
     };
+  }, []);
 
-    const signIn=(email,password)=>{
-        return signInWithEmailAndPassword(auth,email,password)
-    }
-
-    const logout=()=>{
-        return signOut(auth)
-    }
-
-useEffect(()=>{
-const unsubscribe=onAuthStateChanged(auth,(currentUser)=>{
-    
-    setUser(currentUser);
-})
-return()=>{
-    unsubscribe()
-}
-},[])
-
-return(
-    <UserContext.Provider value={{createUser,user,isLoggedin:[isLogedIn,setIsLogedIn],logout,signIn}}>
-        {children}
+  return (
+    <UserContext.Provider
+      value={{
+        createUser,
+        user,
+        isLoggedin: [isLogedIn, setIsLogedIn],
+        logout,
+        signIn,
+      }}
+    >
+      {children}
     </UserContext.Provider>
+  );
+};
 
-)
-}
-
-export const UserAuth=()=>{
-    return useContext(UserContext)
-}
+export const UserAuth = () => {
+  return useContext(UserContext);
+};

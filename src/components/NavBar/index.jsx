@@ -7,9 +7,7 @@ import {
   FaBookReader,
   FaGamepad,
   FaSignInAlt,
-  FaHeart,
 } from "react-icons/fa";
-import { SiGnuprivacyguard } from "react-icons/si";
 import { BsPersonFill } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -80,9 +78,9 @@ const NavBar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link">
+                <li className="nav-link">
                   <DarkMode></DarkMode>
-                </a>
+                </li>
               </li>
               {user ? (
                 <li className="nav-item">

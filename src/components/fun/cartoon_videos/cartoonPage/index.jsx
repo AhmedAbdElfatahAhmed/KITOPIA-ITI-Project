@@ -10,7 +10,6 @@ const CartoonPage = () => {
   let catg = params.name;
   const dispatch = useDispatch();
   useEffect(() => {
-    getVideos();
     dispatch(getVideos(catg));
   }, [dispatch, catg]);
 

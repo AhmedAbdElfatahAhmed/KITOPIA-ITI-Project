@@ -24,8 +24,7 @@ const Comment = ({
     activeComment.type === "replying";
   // const fiveMinutes = 3000;
   // const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes;
-  const canDelete =
-    currentUserId === comment.userId && replies.length === 0 ;
+  const canDelete = currentUserId === comment.userId && replies.length === 0;
   const canReply = Boolean(currentUserId);
   const canEdit = currentUserId === comment.userId;
   const replyId = parentId ? parentId : comment.id;
@@ -34,11 +33,14 @@ const Comment = ({
     <div key={comment.id} className="comment">
       <div className="comment-image-container ">
         <img src={img}  className="w-100"/>
+
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
-          <div className="comment-author" style={{color:"red"}}>{comment.username}</div>
-          <div style={{fontSize:".8rem"}}>{createdAt}</div>
+          <div className="comment-author" style={{ color: "red" }}>
+            {comment.username}
+          </div>
+          <div style={{ fontSize: ".8rem" }}>{createdAt}</div>
         </div>
         {!isEditing && <div className="comment-text">{comment.body}</div>}
         {isEditing && (

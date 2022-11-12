@@ -1,11 +1,9 @@
-import React from "react";
 import "./services.scss";
-import { FaStar, FaChild } from "react-icons/fa";
-import service from "../../../assets/images/home/services/services.png";
-import service1 from "../../../assets/images/home/services/service1.jpg";
-import service2 from "../../../assets/images/home/services/service2.jpg";
-import service3 from "../../../assets/images/home/services/service3.jpg";
-import kids from "../../../assets//images/home/services/visit/kids.png";
+import {FaChild } from "react-icons/fa";
+import preschool from "../../../assets/images/home/education/preschool.jpg";
+import younger from "../../../assets/images/home/education/younger.jpg";
+import older from "../../../assets/images/home/education/older.jpg";
+import kids from "../../../assets//images/home/education/kids.png";
 import { Link } from "react-router-dom";
 
 function Service() {
@@ -19,23 +17,22 @@ function Service() {
 
         <div className="serve_cards_wrapper row ">
           <div className="serve_card col-md-3 col-8 ">
-            <img src={service1} alt="img" width="100%" />
+            <img src={preschool} alt="img" width="100%" />
             <Link to="/edu/levels/preschool">PRE SCHOOL</Link>
-            <p>Kitopia contains a variety of the year stage before 6 years.</p>
+            <p>Kitopia contains a variety of the year stage from 1 to 3 years.</p>
           </div>
           <div className="serve_card col-md-3 col-8 ">
-            <img src={service2} alt="img" width="100%" />
+            <img src={younger} alt="img" width="100%" />
             <Link to="/edu/levels/younger">YOUNGER</Link>
             <p>
-              Kitubia contains a variety of the year stage for children over 6
-              years.
+              Kitubia contains a variety of the year stage for children from 4 to 8 years.
             </p>
           </div>
           <div className="serve_card col-md-3 col-8 ">
-            <img src={service3} alt="img" width="100%" />
+            <img src={older} alt="img" width="100%" />
             <Link to="/edu/levels/older">OLDER</Link>
             <p>
-              Kitopia contains a variety of general stage for more than 10 years
+              Kitopia contains a variety of general stage for more than 8 years
             </p>
           </div>
         </div>

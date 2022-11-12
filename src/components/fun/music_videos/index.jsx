@@ -8,7 +8,6 @@ const MuVideosList = () => {
   const dispatch = useDispatch();
   let catg = "kids music";
   useEffect(() => {
-    getVideos();
     dispatch(getVideos(catg));
   }, [dispatch, catg]);
 

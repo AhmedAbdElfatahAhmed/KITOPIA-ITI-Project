@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./CaVideosList.scss";
 import { cartoons } from "./cartoonData";
-import spoongebob from "../../../assets/images/cartoons/spongebob.png";
 const CaVideosList = () => {
   return (
     <div id="carVid">
@@ -29,13 +28,13 @@ const CaVideosList = () => {
                             <div></div>
                             <div></div>
                           </div>
-                          <a className="hex-content">
-                            <span className="hex-content-inner">
+                          <div className="hex-content">
+                            <span className="hex-content-inner">     
                               <span className="icon">
                                 <img
-                                  className="w-100"
-                                  src={spoongebob}
-                                  alt=""
+                                  className="w-100 rounded-circle"
+                                  src={cartoon.pic}
+                                  alt="{cartoon.name}"
                                 />
                                 <span className="title">{cartoon.name}</span>
                               </span>
@@ -50,7 +49,7 @@ const CaVideosList = () => {
                                 fill="#ec9600"
                               ></path>
                             </svg>
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </Link>

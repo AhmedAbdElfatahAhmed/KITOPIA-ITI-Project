@@ -21,14 +21,11 @@ console.log(e.message)
   if (user !== null) {
     // The user object has basic properties such as display name, email, etc.
     const displayName = user.displayName;
-    const email = user.email;
     const photoURL = user.photoURL;
-    const emailVerified = user.emailVerified;
   
     // The user's ID, unique to the Firebase project. Do NOT use
     // this value to authenticate with your backend server, if
     // you have one. Use User.getToken() instead.
-    const uid = user.uid;
     return(
       <div id="profile">
           <section className="h-100 gradient-custom-2">
@@ -39,7 +36,7 @@ console.log(e.message)
         <div className="rounded-top text-white d-flex flex-row b-cover" >
           <div className="ms-4 mt-5 d-flex flex-column  p-img " >
             <img src={photoURL}
-              alt="Generic placeholder image" className="img-fluid img-thumbnail mt-4 mb-2 h-100 "
+              alt="Generic placeholder" className="img-fluid img-thumbnail mt-4 mb-2 h-100 "
               />
               
             <button type="button" className="btn btn-outline-dark mb-5 " data-mdb-ripple-color="dark"
