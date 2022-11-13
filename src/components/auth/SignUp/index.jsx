@@ -40,7 +40,7 @@ function SignUp(props) {
     try {
       let users = await  createUserWithEmailAndPassword(auth ,email, password).then((userCredential) => {
         // Signed in 
-        console.log(users);
+        console.log(userCredential);
         const user = userCredential.user
         updateProfile(auth.currentUser, {
           displayName: displayName, photoURL: "https://firebasestorage.googleapis.com/v0/b/kitopiaa.appspot.com/o/users%2Fktopia.png?alt=media&token=255b238b-2d1e-418c-837f-98d15705d951",
@@ -49,8 +49,7 @@ function SignUp(props) {
           // Profile updated!
           toast("All in! Welcome in Kitopia");
         }).catch((error) => {
-          // An error occurred
-          // ...
+          toast(error)
         });
         console.log(user)
         // ...
