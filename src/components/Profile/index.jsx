@@ -22,7 +22,7 @@ console.log(e.message)
     // The user object has basic properties such as display name, email, etc.
     const displayName = user.displayName;
     const photoURL = user.photoURL;
-  
+    console.log(user)
     // The user's ID, unique to the Firebase project. Do NOT use
     // this value to authenticate with your backend server, if
     // you have one. Use User.getToken() instead.
@@ -35,7 +35,7 @@ console.log(e.message)
       <div className="card">
         <div className="rounded-top text-white d-flex flex-row b-cover" >
           <div className="ms-4 mt-5 d-flex flex-column  p-img " >
-            <img src={photoURL}
+            <img src={'https://firebasestorage.googleapis.com/v0/b/kitopiaa.appspot.com/o/users%2Fktopia.png?alt=media&token=255b238b-2d1e-418c-837f-98d15705d951'}
               alt="Generic placeholder" className="img-fluid img-thumbnail mt-4 mb-2 h-100 "
               />
               
