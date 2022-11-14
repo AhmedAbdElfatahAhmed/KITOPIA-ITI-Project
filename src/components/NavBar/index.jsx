@@ -78,9 +78,9 @@ const NavBar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link">
+                <Link className="nav-link">
                   <DarkMode></DarkMode>
-                </NavLink>
+                </Link>
               </li>
               {user ? (
                 <li className="nav-item">
