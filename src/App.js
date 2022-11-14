@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Start Component
@@ -28,6 +29,9 @@ import CommentSection from "./components/commentSection";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
+  useEffect(() => {
+    document.title = 'KITOPIA';
+  }, []);
   return (
     <AuthContextProvider>
       <BrowserRouter>
