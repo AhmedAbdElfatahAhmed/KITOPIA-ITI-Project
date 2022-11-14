@@ -10,7 +10,11 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: 300ms;
+  padding-top: 3rem;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -26,12 +30,17 @@ code {
   src: url("./assets/fonts/Flavors/Flavors-Regular.ttf");
 }
 
-.carousel-indicators [data-bs-target] {
-  
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: 0;
-  background-color: #d12881;
-  border-radius: 50%;
-  
+/* to make footer in the bootom of the page */
+html,
+body,
+#root {
+  height: 100%;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+ .fun-heading {
+  margin-top: 20rem;
 }

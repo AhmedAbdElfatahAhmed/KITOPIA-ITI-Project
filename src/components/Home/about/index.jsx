@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.scss";
-import { FaStar, FaChild } from "react-icons/fa";
+import {FaChild } from "react-icons/fa";
 import Carousel from "react-bootstrap/Carousel";
 import slide1 from "../../../assets/images/home/about/about1.jpg";
 import slide2 from "../../../assets/images/home/about/about2.jpg";
@@ -15,13 +15,13 @@ function About() {
   return (
     <section className="aboutUs">
       <div className="container">
-      <div className="section-title d-flex justify-content-center text-uppercase  mb-5 position-relative">
+        <div className="section-title d-flex justify-content-center text-uppercase  mb-5 position-relative">
           <h2>about</h2>
           <FaChild className="child-icon position-absolute" />
         </div>
         <div className="aboutUs_wrapper">
-          <div className="about_top row">
-            <div className="about_left col-md-4 col-8 m-auto">
+          <div className="about_top row ">
+            <div className="about_left col-md-4 col-12 m-auto">
               <Carousel className="Carousel_outline">
                 <Carousel.Item>
                   <img
@@ -54,65 +54,62 @@ function About() {
             <div className="about_right col-md-8 col-8 m-auto">
               <h3>Our Philosophy</h3>
               <p>
-                Ibu lum orci eget, viverra elit. Aliquam erat volut pat phas
-                ellus ac Placerat a ultricies a, posuere lorem ipseut lincas
-                psuiem t volut pat phas ellus ac sodales Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit uasi quidem minus id omnis a
-                nibh fusce mollis.
+                Kitopia is a children's community that includes everything a
+                child needs to enjoy the time spent on the Internet. The child
+                is affected by what he sees on social media, including videos
+                and advertisements, and this is reflected in his personality and
+                thinking. Therefore, Kitopia takes care of this point in order
+                to preserve the thinking and personality of the child and helps
+                him build his personality without negative effects.
               </p>
-              <p>
-                Ibu lum orci eget, viverra elit. Aliquam erat volut pat phas
-                ellus ac Placerat a ultricies a, posuere lorem ipseut lincas
-                psuiem t volut pat phas ellus ac sodales Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit uasi quidem minus id omnis a
-                nibh fusce mollis.
-              </p>
+              
             </div>
           </div>
-          <div className="about_cards_wrapper row gy-5 gx-5">
-            <div className="about_card col-md-4 col-12">
+         
+          <div className="about_cards_wrapper row gy-5 gx-5 mt-5">
+            <div className="about_card col-md-4 col-9">
               <img src={img1} alt="img" width="50%" />
-              <h4>infrastructure</h4>
+              <h4>Educational</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
                 itaque ipsum sit harum.
               </p>
             </div>
-            <div className="about_card col-md-4 col-12">
-              <img src={img2} alt="img" width="50%" />
-              <h4>infrastructure</h4>
+            <div className="about_card col-md-4 col-9">
+              <img src={img2} alt="img" width="40%" />
+              <h4>Questions?</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
                 itaque ipsum sit harum.
               </p>
             </div>
-            <div className="about_card col-md-4 col-12">
-              <img src={img3} alt="img" width="50%" />
-              <h4>infrastructure</h4>
+            <div className="about_card col-md-4 col-9">
+              <img src={img3} alt="img" width="40%" />
+              <h4>E-videos</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
                 itaque ipsum sit harum.
               </p>
             </div>
-            <div className="about_card col-md-4 col-12">
-              <img src={img4} alt="img" width="50%" />
-              <h4>infrastructure</h4>
+            <div className="about_card col-md-4 col-9">
+              <img src={img4} alt="img" width="40%" />
+              <h4>Stories</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
                 itaque ipsum sit harum.
               </p>
             </div>
-            <div className="about_card col-md-4 col-12">
-              <img src={img5} alt="img" width="50%" />
-              <h4>infrastructure</h4>
+            <div className="about_card col-md-4 col-9">
+              <img src={img5} alt="img" width="40%" />
+              <h4>Music</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
                 itaque ipsum sit harum.
               </p>
             </div>
-            <div className="about_card col-md-4 col-12">
-              <img src={img6} alt="img" width="50%" />
-              <h4>infrastructure</h4>
+            <div className="about_card col-md-4 col-9">
+              <img src={img6} alt="img" width="40%" />
+              <h4>Games</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
                 itaque ipsum sit harum.

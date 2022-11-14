@@ -4,6 +4,10 @@
 
 header {
   .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
     background-color: $primary;
     padding: 0;
     .navbar-brand {
@@ -15,8 +19,9 @@ header {
       justify-content: end;
       .navbar-nav {
         .nav-item {
+          position: relative;
           :hover {
-            background-color: $sec-dark;
+            background-color: $sec-light;
           }
           .nav-link {
             font-size: 1.8rem;
@@ -25,7 +30,7 @@ header {
             margin: 0 1px;
           }
           .active {
-            background-color: $sec-dark;
+            background-color: $sec-light;
           }
         }
       }
@@ -49,7 +54,7 @@ header {
           padding-top: 20px;
           .nav-item {
             .nav-link {
-              font-size: 1.4rem;
+              font-size: 1rem;
             }
           }
         }

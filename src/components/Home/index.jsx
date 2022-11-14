@@ -5,6 +5,7 @@ import About from "./about/index";
 import ParentFeedback from "./ParentFeedback";
 import ContactUS from "./ContactUS";
 import "./Home.scss";
+import ToTopIcon from "../ToTopIcon";
 const Home = () => {
   return (
     <Fragment>
@@ -14,6 +15,7 @@ const Home = () => {
         <About></About>
         <ParentFeedback></ParentFeedback>
         <ContactUS></ContactUS>
+        <ToTopIcon/>
       </main>
     </Fragment>
   );

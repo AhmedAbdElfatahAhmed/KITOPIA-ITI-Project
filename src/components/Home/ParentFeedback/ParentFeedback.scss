@@ -1,3 +1,5 @@
+@import "../../../assets/styles/base/mixin";
+@import "../../../assets/styles/base/variables";
 .parents-feedback-section {
   margin-bottom: 7rem;
   .feedback {
@@ -7,7 +9,7 @@
     transition: all 0.5s ease-in-out;
     margin-bottom: 65px;
     .parent-name {
-      color: #ec9600;
+      color: $primary;
       font-family: Flavors-Regular;
       font-size: 1.8rem;
     }
@@ -27,11 +29,11 @@
       }
     }
     &:hover {
-      background-color: #d12881;
-      color: #fff;
+      background-color: $sec-light;
+      color: $white;
     }
     &:hover .parent-name {
-      color: #fff;
+      color: $white;
     }
     &:hover figure img {
       transform: scale3d(1.2, 1.2, 0.3);
@@ -41,7 +43,7 @@
     bottom: -20px;
   }
   .carousel-indicators [data-bs-target] {
-    background-color: #ec9600;
+    background-color: $primary;
   }
   .carousel-control-next-icon {
     background-image: url("../../../assets/images/home/parents_feedback/right-arrow.png");

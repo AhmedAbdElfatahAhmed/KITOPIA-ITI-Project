@@ -1,5 +1,6 @@
 import "./NavBar.scss";
 import logo from "../../assets/images/navbar/logo-png.png";
+import axios from "axios";
 import {
   FaHome,
   FaVideo,
@@ -7,9 +8,35 @@ import {
   FaGamepad,
   FaSignInAlt,
 } from "react-icons/fa";
-import { SiGnuprivacyguard } from "react-icons/si";
+import { BsPersonFill } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import DarkMode from "../DarkMode";
+
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 const NavBar = () => {
+  // set count liked videos from db file
+  const [countLiked, setCountLiked] = useState(0);
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    // get user info
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      setUser(user)
+    });
+    // get Liked length
+    axios
+      .get(`http://localhost:3005/likedVideos`)
+      .then((res) => {
+        setCountLiked(res.data.length);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [countLiked]);
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg">
@@ -51,15 +78,23 @@ const NavBar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/signup">
-                  <SiGnuprivacyguard />
-                </NavLink>
+                <Link className="nav-link">
+                  <DarkMode></DarkMode>
+                </Link>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/login">
-                  <FaSignInAlt />
-                </NavLink>
-              </li>
+              {user ? (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/profile">
+                    <BsPersonFill />
+                  </NavLink>
+                </li>
+              ) : (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/login">
+                    < FaSignInAlt/>
+                  </NavLink>
+                </li>
+              )}
             </ul>
           </div>
         </div>

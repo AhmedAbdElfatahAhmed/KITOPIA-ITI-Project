@@ -1,5 +1,10 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// export const store = configureStore({
-//   // reducers
-
-// });
+import { configureStore } from "@reduxjs/toolkit";
+import subjects from "./subjectsSlice";
+import videos from "./videosSlice";
+export const store = configureStore({
+  // reducers
+  reducer: {
+    subjects,
+    videos
+  },
+});

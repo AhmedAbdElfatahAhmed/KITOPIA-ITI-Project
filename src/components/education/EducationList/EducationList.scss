@@ -129,9 +129,19 @@
     .edu-heading {
       font-size: 3rem;
     }
+    .pens {
+      height: 125%;
+    }
   }
 }
 
+@include breakPoints(mediumScreen) {
+  .education-wrapper {
+    .pens {
+      height: 140%;
+    }
+  }
+}
 // Animations
 
 @keyframes bubblesEdu {
