@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/KITOPIA-ITI-Project/static/css/main.a8888f78.css",
-    "main.js": "/KITOPIA-ITI-Project/static/js/main.8adc9384.js",
+    "main.js": "/KITOPIA-ITI-Project/static/js/main.664aa1e2.js",
     "static/js/787.4424c977.chunk.js": "/KITOPIA-ITI-Project/static/js/787.4424c977.chunk.js",
     "static/media/ludo.png": "/KITOPIA-ITI-Project/static/media/ludo.f7ad23b022dd750c73ee.png",
     "static/media/404.gif": "/KITOPIA-ITI-Project/static/media/404.cf1ae5f0464d4b2b7da6.gif",
@@ -51,11 +51,11 @@
     "static/media/logo-png.png": "/KITOPIA-ITI-Project/static/media/logo-png.f2128ee9e5e5ef48dfa1.png",
     "index.html": "/KITOPIA-ITI-Project/index.html",
     "main.a8888f78.css.map": "/KITOPIA-ITI-Project/static/css/main.a8888f78.css.map",
-    "main.8adc9384.js.map": "/KITOPIA-ITI-Project/static/js/main.8adc9384.js.map",
+    "main.664aa1e2.js.map": "/KITOPIA-ITI-Project/static/js/main.664aa1e2.js.map",
     "787.4424c977.chunk.js.map": "/KITOPIA-ITI-Project/static/js/787.4424c977.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a8888f78.css",
-    "static/js/main.8adc9384.js"
+    "static/js/main.664aa1e2.js"
   ]
 }
