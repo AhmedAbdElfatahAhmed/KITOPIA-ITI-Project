@@ -34,7 +34,7 @@ function App() {
   }, []);
   return (
     <AuthContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/KITOPIA-ITI-Project">
         <ScrollToTop />
         <NavBar />
         <Routes>
